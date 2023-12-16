@@ -13,7 +13,7 @@ Tareas por hacer
 - [ ] Numerar las historias
 - [ ] Indicar las historias / requisitos funcionales en las iteraciones
 - [ ] Listar los requisitos no funcionales en limpio
-- [ ] 
+- [ ] ---
 - [ ] Redactar Introducción, Motivación y Objetivos
 - [ ] Buscar el estado del arte
 - [ ] Definir arquitectura
