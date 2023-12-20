@@ -3,7 +3,7 @@
 - [Público objetivo](#Público-objetivo)
 - [Historias de usuario](#Historias-de-usuario)
 - [Iteraciones](#Iteraciones)
-
+- [Historial](#Historial)
 ---
 
 Tareas por hacer
@@ -174,3 +174,14 @@ Requisitos en sucio:
 - copiar dietas
 - calcular calorías necesarias
 - variar formulas calorías
+
+---
+
+# Historial
+
+20/12/23
+
+- Creación del proyecto Django
+- Prueba de la plantilla bs
+- Configuración contenido static
+- Extensión htmx
