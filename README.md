@@ -185,3 +185,7 @@ Requisitos en sucio:
 - Prueba de la plantilla bs
 - Configuración contenido static
 - Extensión htmx
+
+21/12/23
+
+- Soporte de traducción estática
