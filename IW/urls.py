@@ -23,5 +23,7 @@ from .views import *
 urlpatterns = i18n_patterns(
     path('admin/', admin.site.urls),
     path('rosetta/', include('rosetta.urls')),
-    path('', index),
+    path('', index, name="home"),
+    path('contact', contact, name="contact"),
+    path('contact-form', contact_form, name="contact-form"),
 )

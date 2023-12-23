@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-21 14:23+0100\n"
-"PO-Revision-Date: 2023-12-21 16:14+0000\n"
+"POT-Creation-Date: 2023-12-22 23:24+0100\n"
+"PO-Revision-Date: 2023-12-22 23:24+0000\n"
 "Last-Translator:   <admin@admin.admin>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -26,3 +26,19 @@ msgstr "Spanish"
 #: .\IW\settings.py:140
 msgid "Inglés"
 msgstr "English"
+
+#: .\IW\templates\base.html:84
+msgid "Privacidad"
+msgstr "Privacy"
+
+#: .\IW\templates\base.html:86
+msgid "Terminos"
+msgstr "Terms"
+
+#: .\IW\templates\base.html:88
+msgid "Contacto"
+msgstr "Contact"
+
+#: .\IW\templates\index.html:6
+msgid "Titulo de prueba"
+msgstr "Test title"
