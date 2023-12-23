@@ -189,3 +189,11 @@ Requisitos en sucio:
 21/12/23
 
 - Soporte de traducción estática
+
+22/12/23
+
+- Creación de la plantilla base
+- Importación de la pagina de contacto de la plantilla
+- htmx boosting
+- htmx formularios
+- Validación de formularios bs + htmx
