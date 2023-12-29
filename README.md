@@ -10,8 +10,8 @@ Tareas por hacer
 
 - [x] Revisar historias
 - [x] Crear iteraciones
-- [ ] Numerar las historias
-- [ ] Indicar las historias / requisitos funcionales en las iteraciones
+- [x] Numerar las historias
+- [x] Indicar las historias / requisitos funcionales en las iteraciones
 - [ ] Listar los requisitos no funcionales en limpio
 - [ ] ---
 - [ ] Redactar Introducción, Motivación y Objetivos
@@ -56,36 +56,37 @@ Tareas por hacer
 
 Los criterios se validarán junto al usuario en pruebas de funcionalidad.
 
-- **Como** visitante **quiero** ver la pagina de inicio **para** informarme sobre el servicio
+- 1. **Como** visitante **quiero** ver la pagina de inicio **para** informarme sobre el servicio
 	- Criterios:
 		- La página de inicio contiene información sobre el servicio
 		- Permite acceder a una página de contacto
+		- Permite acceder a una página de _about me_
 
-- **Como** visitante **quiero** contactar con el nutricionista **para** obtener más información y/o convertirme en cliente
+- 2. **Como** visitante **quiero** contactar con el nutricionista **para** obtener más información y/o convertirme en cliente
 	- Criterios:
 		- La página de contacto proveerá información de contacto del nutricionista
 		- También contendrá un correo electrónico con un "mailto:"
 
-- **Como** cliente o nutricionista **quiero** iniciar sesión **para** acceder al servicio
+- 3. **Como** cliente o nutricionista **quiero** iniciar sesión **para** acceder al servicio
 	- Criterios:
 		- Todas las páginas accesibles sin iniciar sesión contendrán una manera de hacerlo.
 		- Se podrá cerrar sesión desde esas páginas una vez iniciada.
 
-- **Como** cliente **quiero** consultar la dieta **para** alimentarme correctamente
+- 4. **Como** cliente **quiero** consultar la dieta **para** alimentarme correctamente
 	- Criterios:
 		- La página del usuario contiene información sobre su dieta activa
 
-- **Como** cliente o nutricionista **quiero** consultar la evolución **para** comprobar si mejora
+- 5. **Como** cliente o nutricionista **quiero** consultar la evolución **para** comprobar si mejora
 	- Criterios:
 		- La página del usuario contiene información sobre su evolución
 
-- **Como** cliente **quiero** contactar con el nutricionista **para** consultar mis dudas
+- 6. **Como** cliente **quiero** contactar con el nutricionista **para** consultar mis dudas
 	- Prioridad: muy baja
 	- Criterios:
 		- O existe un formulario para comunicarse con el nutricionista
 		- O se realiza todo por teléfono
 
-- **Como** nutricionista **quiero** gestionar clientes **para** dar de alta, dar de baja y modificar los datos de mis clientes 
+- 7. **Como** nutricionista **quiero** gestionar clientes **para** dar de alta, dar de baja y modificar los datos de mis clientes 
 	- Criterios:
 		- Poder dar de alta clientes con su:
 			- nombre
@@ -98,16 +99,25 @@ Los criterios se validarán junto al usuario en pruebas de funcionalidad.
 		- Poder dar de baja a clientes
 		- Poder modificar los datos de los clientes
 
-- **Como** nutricionista **quiero** generar series de alimentos para 5 las comidas del cliente **para** optimizar su ingesta de calorías
+- 8. **Como** nutricionista **quiero** generar series de alimentos para 5 las comidas del cliente **para** optimizar su ingesta de calorías
 	- Criterios:
 		- Poder generar una lista de alimentos basada en:
 			- grasas
 			- proteínas 
 			- hidratos de carbono
 
-- **Como** nutricionista **quiero** gestionar los alimentos **para** crear, modificar las propiedades y eliminar alimentos.
+- 9. **Como** nutricionista **quiero** gestionar los alimentos **para** crear, modificar las propiedades y eliminar alimentos.
+	- Criterios:
+		- Poder:
+			- Crear
+			- Modificar las propiedades
+			- Y eliminar alimentos
 
-- **Como** nutricionista **quiero** ver dietas anteriores del cliente, copiar y modificar dietas **para** no tener que crearlas desde cero
+- 10. **Como** nutricionista **quiero** ver dietas anteriores del cliente, copiar y modificar dietas **para** no tener que crearlas desde cero
+	- Criterios:
+		- Poder ver un historico de dietas del cliente
+		- Copiar dietas
+		- Modificar dietas
 
 ---
 
@@ -117,6 +127,7 @@ Los criterios se validarán junto al usuario en pruebas de funcionalidad.
 
 Implementar la página web base funcional que permita a los visitantes anónimos cumplir todas sus historias.
 
+- Historias: 1, 2
 - Crear plantilla base de la página
 - Implementar página de inicio
 - Implementar página about me
@@ -126,6 +137,7 @@ Implementar la página web base funcional que permita a los visitantes anónimos
 
 Implementar login, sesiones y autenticación para diferenciar los roles.
 
+- Historias: 3
 - Implementar pagina de login (o modal)
 - Implementar botón de logout
 - Crear la base para una página "home" personalizada dependiendo del rol
@@ -134,6 +146,7 @@ Implementar login, sesiones y autenticación para diferenciar los roles.
 
 Implementar la CRUD de las dietas y el seguimiento
 
+- Historias: 4, 5
 - Implementar CRUD de dietas para el nutricionista (nutricionista)
 - Implementar copia de dietas (nutricionista)
 - Implementar consulta de dietas (cliente y nutricionista)
@@ -143,6 +156,7 @@ Implementar la CRUD de las dietas y el seguimiento
 
 ## Iteración 4 (Revisable) 
 
+- Historias 7, 9
 Crear CRUD de los alimentos y de los usuarios (nutricionista)
 
 - Implementar página de gestión de usuarios con posibilidad de CRUD
@@ -150,7 +164,8 @@ Crear CRUD de los alimentos y de los usuarios (nutricionista)
 
 ## Iteración 5 (Revisable) 
 
-A definir.
+A definir. ¿6, 8, 10?
+
 
 ---
 
