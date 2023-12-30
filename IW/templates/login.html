@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}
+{% trans "Iniciar de sesión" %}
+{% endblock %}
+
+{% block main %}
+<!-- Page content -->
+<section class="py-5">
+    <div class="container px-5">
+        <!-- Contact form -->
+        <div id="form_container" class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
+            <div class="text-center mb-5">
+                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3">
+                    <i class="bi bi-key"></i>
+                </div>
+                <h1 class="fw-bolder">{% trans 'Iniciar sesión' %}</h1>
+                {% comment %} <p class="lead fw-normal text-muted mb-0">{% trans 'Nos encantaría contar contigo' %}</p> {% endcomment %}
+            </div>
+            <div class="row gx-5 justify-content-center">
+                <div class="col-lg-8 col-xl-6">
+                    <form 
+                        id="mainForm" 
+                        class="needs-validation" 
+                        hx-post="{% url 'login-form' %}" 
+                        hx-trigger="bs-send"
+                        hx-swap="outerHTML"
+                        hx-target="#errorContainer"
+                        novalidate>
+                        <!-- Email address input -->
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="username" name="username" type="email" placeholder="{% trans 'Dirección de correo' %}" value="a@a" required/>
+                            <label for="username">{% trans 'Dirección de correo' %}</label>
+                        </div>
+                        <!-- Password input -->
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="password" name="password" type="password" placeholder="password" value="ds" required/>
+                            <label for="password">{% trans 'Contraseña' %}</label>
+                        </div>
+                        <!-- Error container -->
+                        <p id="errorContainer" class="visually-hidden" ></p>
+                        <!-- Submit Button -->
+                        <div class="d-grid">
+                            <button 
+                                class="btn btn-primary btn-lg" 
+                                id="submitButton"
+                                type="submit">
+                                    {% trans 'Iniciar sesión' %}
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    ; (() => {
+        'use strict'
+        const form = document.getElementById('mainForm')
+        form.addEventListener('submit', (event) => {
+                if (form.checkValidity()) {
+                    // trigger custom event hx-trigger="bs-send"
+                    htmx.trigger(form, "bsSend");
+                }
+                event.preventDefault()
+                event.stopPropagation()
+                
+                form.classList.add('was-validated')
+            },false)
+    })()
+</script>
+{% endblock %}

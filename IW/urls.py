@@ -15,8 +15,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.contrib.auth import logout
+from django.shortcuts import redirect
 from django.urls import include, path
 from django.conf.urls.i18n import i18n_patterns
+
+from IW.views.login import login_form
 
 from .views import *
 
@@ -27,4 +31,7 @@ urlpatterns = i18n_patterns(
     path('contact', contact, name="contact"),
     path('contact-form', contact_form, name="contact-form"),
     path('about', about, name="about"),
+    path('login', login, name="login"),
+    path('login-form', login_form, name="login-form"),
+    path('logout', lambda x: redirect("home") if logout(x) else redirect("home") , name="logout"),  # type: ignore
 )
