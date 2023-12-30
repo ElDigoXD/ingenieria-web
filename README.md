@@ -253,3 +253,9 @@ Fuente: [django](https://docs.djangoproject.com/en/5.0/howto/deployment/wsgi/mod
 - Personalizar el home
 - Personalizar la página de contacto (sin funcionalidad)
 - Importación de la pagina de _about_ de la plantilla
+
+30/12/23
+
+- Personalizar la pagina de _about_
+- Despliegue en apache de la iteración 1
+- Implementación del sistema de login
