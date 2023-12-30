@@ -26,4 +26,5 @@ urlpatterns = i18n_patterns(
     path('', index, name="home"),
     path('contact', contact, name="contact"),
     path('contact-form', contact_form, name="contact-form"),
+    path('about', about, name="about"),
 )
