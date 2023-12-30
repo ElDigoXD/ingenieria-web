@@ -3,6 +3,9 @@
 - [Público objetivo](#Público-objetivo)
 - [Historias de usuario](#Historias-de-usuario)
 - [Iteraciones](#Iteraciones)
+- [Instalación](#Instalación)
+	- [Desarrollo](##Versión-de-desarrollo)
+	- [Producción](##Versión-de-producción)
 - [Historial](#Historial)
 ---
 
@@ -13,6 +16,10 @@ Tareas por hacer
 - [x] Numerar las historias
 - [x] Indicar las historias / requisitos funcionales en las iteraciones
 - [ ] Listar los requisitos no funcionales en limpio
+- [ ] ---
+- [x] Permitir conexiones 0.0.0.0
+- [ ] Añadir admin a static
+- [ ] Apache https
 - [ ] ---
 - [ ] Redactar Introducción, Motivación y Objetivos
 - [ ] Buscar el estado del arte
@@ -189,6 +196,32 @@ Requisitos en sucio:
 - copiar dietas
 - calcular calorías necesarias
 - variar formulas calorías
+
+---
+
+# Instalación
+
+## Versión de desarrollo
+
+1. Instalar python 3.12 y su modulo "venv"
+2. Clonar el repositorio y entrar en su carpeta (git clone ...; cd ingeniería-web)
+3. Crear un entorno virtual (python3.12 -m venv venv)
+4. Activar el entorno virtual (source ./venv/bin/activate)
+5. Instalar las dependencias (pip install -r requirements.txt)
+6. Ejecutar el servidor de desarrollo (python manage.py runserver)
+
+
+## Versión de producción
+
+1. Instalar python, dev, apache, dev, mod_wsgi
+2. Clonar el repositorio y entrar en su carpeta (git clone ...; cd ingeniería-web)
+3. Crear un entorno virtual (python3.12 -m venv venv)
+4. Activar el entorno virtual (source ./venv/bin/activate)
+5. Instalar las dependencias (pip install -r requirements.txt)
+6. Configurar apache con la ruta de la aplicación
+7. Reiniciar apache
+
+Fuente: [django](https://docs.djangoproject.com/en/5.0/howto/deployment/wsgi/modwsgi/)
 
 ---
 
