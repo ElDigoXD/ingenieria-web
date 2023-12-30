@@ -212,3 +212,11 @@ Requisitos en sucio:
 - htmx boosting
 - htmx formularios
 - Validación de formularios bs + htmx
+
+29/12/23
+
+- Numerar las historias
+- Añadir la numeración de las historias a las iteraciones
+- Personalizar el home
+- Personalizar la página de contacto (sin funcionalidad)
+- Importación de la pagina de _about_ de la plantilla
