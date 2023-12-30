@@ -11,7 +11,7 @@
 {% block style %}
 <style>
   .noisy-gradient {
-    background: linear-gradient(45deg, #3498db99, #2ecc7199), url(https://grainy-gradients.vercel.app/noise.svg); /* Change colors as needed */ 
+    background: linear-gradient(45deg, #3498db99, #2ecc7199), url({% static 'img/noise.svg' %}); /* Change colors as needed */ 
   }
 </style>
 {% endblock style %}
