@@ -26,7 +26,9 @@
           <div class="col-lg-8 col-xl-7 col-xxl-6">
             <div class="my-5 text-center text-xl-start">
               <h1 class="display-5 fw-bolder text-white mb-2">{% trans 'Encuentra el equilibrio perfecto para tu bienestar' %}</h1>
-              <p class="lead fw-normal text-white mb-4">{% trans 'Estamos comprometidos a proporcionarte las herramientas y el conocimiento necesario para transformar tus hábitos alimenticios y alcanzar una vida plena en equilibrio.' %}</p>
+              {% comment %} <p class="lead fw-normal text-white mb-4">{% trans 'Estamos comprometidos a proporcionarte las herramientas y el conocimiento necesario para transformar tus hábitos alimenticios y alcanzar una vida plena en equilibrio.' %}</p> {% endcomment %}
+              <p class="lead fw-normal text-white mb-4">{% trans 'En NutriBalance entendemos que la nutrición desempeña un papel fundamental en tu bienestar general y estamos aquí para guiarte en cada paso del camino.' %}</p>
+              
               <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
                 <a class="btn btn-primary btn-lg px-4 me-sm-3 shadow " href="{% url 'contact' %}">{% trans 'Contactar' %}</a>
                 <a class="btn btn-outline-light btn-lg px-4 shadow " href="#{% trans 'Más_Información' %}">{% trans 'Más Información' %}</a>
