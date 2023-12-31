@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load i18n %}
+{% load static %}
 
 {% block title %}
 {% trans "Iniciar de sesión" %}
@@ -16,7 +17,29 @@
                     <i class="bi bi-key"></i>
                 </div>
                 <h1 class="fw-bolder">{% trans 'Iniciar sesión' %}</h1>
-                {% comment %} <p class="lead fw-normal text-muted mb-0">{% trans 'Nos encantaría contar contigo' %}</p> {% endcomment %}
+                
+{% if user.is_authenticated %}
+                <p class="lead fw-normal text-muted mb-0">{% trans 'Ya se ha iniciado sesión' %}</p>
+            </div>
+            <div class="row gx-5 justify-content-center">
+                <div class="col-lg-8 col-xl-6">
+                    <div class="d-grid mb-3">
+                        <a 
+                        class="btn btn-primary btn-lg" 
+                        href="{% url 'home' %}">
+                            {% trans 'Continuar' %}
+                        </a>
+                    </div>
+                    <div class="d-grid">
+                        <a 
+                        class="btn btn-secondary btn-lg" 
+                        href="{% url 'logout' %}">
+                            {% trans 'Cerrar sesión' %}
+                        </a>
+                    </div>
+                </div>
+            </div>
+{% else %}
             </div>
             <div class="row gx-5 justify-content-center">
                 <div class="col-lg-8 col-xl-6">
@@ -30,7 +53,7 @@
                         novalidate>
                         <!-- Email address input -->
                         <div class="form-floating mb-3">
-                            <input class="form-control" id="username" name="username" type="email" placeholder="{% trans 'Dirección de correo' %}" value="a@a" required/>
+                            <input class="form-control" id="username" name="username" type="email" placeholder="{% trans 'Dirección de correo' %}" value="a@a.aa" required/>
                             <label for="username">{% trans 'Dirección de correo' %}</label>
                         </div>
                         <!-- Password input -->
@@ -52,6 +75,7 @@
                     </form>
                 </div>
             </div>
+{% endif %}
         </div>
     </div>
 </section>
@@ -60,6 +84,8 @@
     ; (() => {
         'use strict'
         const form = document.getElementById('mainForm')
+        if (!form) return
+
         form.addEventListener('submit', (event) => {
                 if (form.checkValidity()) {
                     // trigger custom event hx-trigger="bs-send"
