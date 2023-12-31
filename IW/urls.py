@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.contrib.auth import logout
-from django.shortcuts import redirect
+from django.shortcuts import redirect, render
 from django.urls import include, path
 from django.conf.urls.i18n import i18n_patterns
 
@@ -34,4 +34,6 @@ urlpatterns = i18n_patterns(
     path('login', login, name="login"),
     path('login-form', login_form, name="login-form"),
     path('logout', lambda x: redirect("home") if logout(x) else redirect("home") , name="logout"),  # type: ignore
+    path('profile', lambda x: render(x, "profile.html"), name="profile"),
+    path('nutricionist', lambda x: render(x, "nutricionist.html"), name="nutricionist"),
 )
