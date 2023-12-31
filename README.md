@@ -6,6 +6,7 @@
 - [Instalación](#Instalación)
 	- [Desarrollo](##Versión-de-desarrollo)
 	- [Producción](##Versión-de-producción)
+- [Referencias](#Referencias)
 - [Historial](#Historial)
 ---
 
@@ -222,6 +223,17 @@ Requisitos en sucio:
 7. Reiniciar apache
 
 Fuente: [django](https://docs.djangoproject.com/en/5.0/howto/deployment/wsgi/modwsgi/)
+
+---
+
+# Referencias
+
+- [Django](https://www.djangoproject.com/)
+- [htmx](https://htmx.org/)
+- [Extensión django-htmx](https://django-htmx.readthedocs.io/)
+- [Bootstrap](https://getbootstrap.com/)
+- [Plantilla por Start Bootstrap](https://startbootstrap.com/template/modern-business)
+- [Generador de personas](https://thispersondoesnotexist.com/)
 
 ---
 
