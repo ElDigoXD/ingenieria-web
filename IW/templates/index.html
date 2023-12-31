@@ -10,8 +10,9 @@
 
 {% block style %}
 <style>
+  <!-- Inline to work with htmx boost -->
   .noisy-gradient {
-    background: linear-gradient(45deg, #3498db99, #2ecc7199), url({% static 'img/noise.svg' %}); /* Change colors as needed */ 
+    background: linear-gradient(45deg, #3498db99, #2ecc7199), url({% static 'img/noise.svg' %}) !important; 
   }
 </style>
 {% endblock style %}
@@ -20,7 +21,7 @@
 {% block main %}
   <main>
     <!-- Header -->
-    <header class="bg-dark py-5 noisy-gradient">
+    <header class="bg-dark py-5" id="a" style="background: linear-gradient(45deg, #3498db99, #2ecc7199), url({% static 'img/noise.svg' %})">
       <div class="container px-5">
         <div class="row gx-5 align-items-center justify-content-center">
           <div class="col-lg-8 col-xl-7 col-xxl-6">
