@@ -271,3 +271,11 @@ Fuente: [django](https://docs.djangoproject.com/en/5.0/howto/deployment/wsgi/mod
 - Personalizar la pagina de _about_
 - Despliegue en apache de la iteración 1
 - Implementación del sistema de login
+
+31/12/23
+
+- Editar pagina login cuando se está logeado (¿redireccion en un futuro?)
+- Añadir grupos
+- Redirección a proto-pagina home por grupo 
+- Ampliación about me
+- Ampliacion contacto
