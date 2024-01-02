@@ -65,67 +65,67 @@ Tareas por hacer
 Los criterios se validarán junto al usuario en pruebas de funcionalidad.
 
 - 1. **Como** visitante **quiero** ver la pagina de inicio **para** informarme sobre el servicio
-	- Criterios:
-		- La página de inicio contiene información sobre el servicio
-		- Permite acceder a una página de contacto
-		- Permite acceder a una página de _about me_
+  - Criterios:
+    - La página de inicio contiene información sobre el servicio
+    - Permite acceder a una página de contacto
+    - Permite acceder a una página de _about me_
 
 - 2. **Como** visitante **quiero** contactar con el nutricionista **para** obtener más información y/o convertirme en cliente
-	- Criterios:
-		- La página de contacto proveerá información de contacto del nutricionista
-		- También contendrá un correo electrónico con un "mailto:"
+  - Criterios:
+    - La página de contacto proveerá información de contacto del nutricionista
+    - También contendrá un correo electrónico con un "mailto:"
 
 - 3. **Como** cliente o nutricionista **quiero** iniciar sesión **para** acceder al servicio
-	- Criterios:
-		- Todas las páginas accesibles sin iniciar sesión contendrán una manera de hacerlo.
-		- Se podrá cerrar sesión desde esas páginas una vez iniciada.
+  - Criterios:
+    - Todas las páginas accesibles sin iniciar sesión contendrán una manera de hacerlo.
+    - Se podrá cerrar sesión desde esas páginas una vez iniciada.
 
 - 4. **Como** cliente **quiero** consultar la dieta **para** alimentarme correctamente
-	- Criterios:
-		- La página del usuario contiene información sobre su dieta activa
+  - Criterios:
+    - La página del usuario contiene información sobre su dieta activa
 
 - 5. **Como** cliente o nutricionista **quiero** consultar la evolución **para** comprobar si mejora
-	- Criterios:
-		- La página del usuario contiene información sobre su evolución
+  - Criterios:
+    - La página del usuario contiene información sobre su evolución
 
 - 6. **Como** cliente **quiero** contactar con el nutricionista **para** consultar mis dudas
-	- Prioridad: muy baja
-	- Criterios:
-		- O existe un formulario para comunicarse con el nutricionista
-		- O se realiza todo por teléfono
+  - Prioridad: muy baja
+  - Criterios:
+    - O existe un formulario para comunicarse con el nutricionista
+    - O se realiza todo por teléfono
 
 - 7. **Como** nutricionista **quiero** gestionar clientes **para** dar de alta, dar de baja y modificar los datos de mis clientes 
-	- Criterios:
-		- Poder dar de alta clientes con su:
-			- nombre
-			- teléfono
-			- peso
-			- altura
-			- correo
-			- nivel de actividad
-			- formula de calorías personalizada
-		- Poder dar de baja a clientes
-		- Poder modificar los datos de los clientes
+  - Criterios:
+    - Poder dar de alta clientes con su:
+      - nombre
+      - teléfono
+      - peso
+      - altura
+      - correo
+      - nivel de actividad
+      - formula de calorías personalizada
+    - Poder dar de baja a clientes
+    - Poder modificar los datos de los clientes
 
 - 8. **Como** nutricionista **quiero** generar series de alimentos para 5 las comidas del cliente **para** optimizar su ingesta de calorías
-	- Criterios:
-		- Poder generar una lista de alimentos basada en:
-			- grasas
-			- proteínas 
-			- hidratos de carbono
+  - Criterios:
+    - Poder generar una lista de alimentos basada en:
+      - grasas
+      - proteínas 
+      - hidratos de carbono
 
 - 9. **Como** nutricionista **quiero** gestionar los alimentos **para** crear, modificar las propiedades y eliminar alimentos.
-	- Criterios:
-		- Poder:
-			- Crear
-			- Modificar las propiedades
-			- Y eliminar alimentos
+  - Criterios:
+    - Poder:
+      - Crear
+      - Modificar las propiedades
+      - Y eliminar alimentos
 
 - 10. **Como** nutricionista **quiero** ver dietas anteriores del cliente, copiar y modificar dietas **para** no tener que crearlas desde cero
-	- Criterios:
-		- Poder ver un historico de dietas del cliente
-		- Copiar dietas
-		- Modificar dietas
+  - Criterios:
+    - Poder ver un historico de dietas del cliente
+    - Copiar dietas
+    - Modificar dietas
 
 ---
 
