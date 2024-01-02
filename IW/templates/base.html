@@ -64,6 +64,7 @@
                 <span class="ps-4 d-none d-lg-inline"></span> {{user.first_name}}
               </a>
               <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="{% url 'profile' %}">{% trans "Mi perfil" %}</a></li>
                 <li><a class="dropdown-item" href="{% url 'logout' %}">{% trans "Cerrar sesión" %}</a></li>
               </ul>
             </li>
