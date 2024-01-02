@@ -221,8 +221,9 @@ Requisitos en sucio:
 4. Activar el entorno virtual (source ./venv/bin/activate)
 5. Instalar las dependencias (pip install -r requirements.txt)
 6. Dar permisos a la base de datos y al directorio (chmod o+w ...)
-7. Configurar apache con la ruta de la aplicación
-8. Reiniciar apache
+7. Recolectar todos los static (python manage.py collectstatic)
+8. Configurar apache con la ruta de la aplicación
+9. Reiniciar apache
 
 Fuente: [django](https://docs.djangoproject.com/en/5.0/howto/deployment/wsgi/modwsgi/)
 
