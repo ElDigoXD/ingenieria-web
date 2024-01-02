@@ -26,6 +26,7 @@ SECRET_KEY = 'django-insecure-9yj_*!#t$ker%l8wb5ab5lh&%1m+1so$i21y5&*9kuzc8(hv&x
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
+INTERNAL_IPS = ["127.0.0.1"]
 
 
 # Application definition
@@ -39,10 +40,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_htmx',
     'rosetta',
+    'debug_toolbar',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -143,3 +146,7 @@ LANGUAGES = (
 LOCALE_PATHS = [
     BASE_DIR / 'IW' / 'locale/',
 ]
+
+DEBUG_TOOLBAR_CONFIG = {
+    "ROOT_TAG_EXTRA_ATTRS": "hx-preserve"
+}
