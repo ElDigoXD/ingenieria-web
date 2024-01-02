@@ -13,7 +13,7 @@ def login(request: HttpRequest) -> HttpResponse:
 @require_POST
 def login_form(request: HttpRequest) -> HttpResponse:
   
-  user: User = authenticate(username=request.POST.get("username"), password=request.POST.get("password")) # type: ignore
+  user: User | None = authenticate(username=request.POST.get("username"), password=request.POST.get("password")) # type: ignore
   print(request.POST)
   
   if not user:
