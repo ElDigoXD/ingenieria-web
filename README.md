@@ -7,6 +7,7 @@
 	- [Desarrollo](##Versión-de-desarrollo)
 	- [Producción](##Versión-de-producción)
 - [Referencias](#Referencias)
+- [Mockups](#Mockups)
 - [Historial](#Historial)
 ---
 
@@ -235,6 +236,226 @@ Fuente: [django](https://docs.djangoproject.com/en/5.0/howto/deployment/wsgi/mod
 - [Bootstrap](https://getbootstrap.com/)
 - [Plantilla por Start Bootstrap](https://startbootstrap.com/template/modern-business)
 - [Generador de personas](https://thispersondoesnotexist.com/)
+
+---
+
+# Mockups
+
+## Cliente
+
+### Perfil
+
+```
+contexto: Alice (cliente) logueada
+url: /profile
+-------------------------------------------------------------------
+NutriBalance              Home Quienes Somos Contacto    Alice v 
+-------------------------------------------------------------------
+
+Alice Martinez
+
+
+Dieta hoy:              |       Dieta mañana:               
+- Desayuno:             |       - Desayuno:              
+  - huevo frito         |         - huevo frito          
+- Almuerzo:             |       - Almuerzo:              
+  - Lomo embuchado     |         - Lomo embuchado      
+- Comida:               |       - Comida:                
+  - Lentejas           |         - Lentejas            
+  - Yogur               |         - Yogur                
+- Merienda:             |       - Merienda:              
+  - Mandarina           |         - Mandarina            
+- Cena:                 |       - Cena:                  
+  - Judias verdes       |         - Judias verdes        
+
+
+[Consultar detalles de la dieta *to: /dieta*]
+
+Evolución
+
+[*campo numerico* kg]  [Añadir peso de hoy] 
+*si se ha añadido:*
+[*campo numerico* 70kg]  [Actualizar peso de hoy] 
+
+
+kg
+|
+|
+|
+| ____
+|     \_____                    __
+|           \__________________/
+| 
++----------------------------------- dia
+
+-------------------------------------------------------------------
+Copyright © Diego Sanz - 2023   GitHub · Privacy · Terms · Contact
+-------------------------------------------------------------------
+```
+
+### Dieta
+
+```
+contexto: Alice (cliente) logueada
+url: /dieta
+-------------------------------------------------------------------
+NutriBalance               Home Quienes Somos Contacto    Bob v 
+-------------------------------------------------------------------
+
+Seleccionar día: [<] [*datepicker limitado, default: hoy*] [>]
+
+Dieta:
+
+calorías: 1875/2000 kcal
+proteínas: 123g
+hidratos: 3g
+grasas: 12g
+
+|                | uds | g   | calorías | proteínas | hidratos | grasas |
+|:-------------- | --- | --- | -------- | --------- | -------- | ------ |
+| Desayuno:      | -   | -   | -        | -         | -        | -      |
+| huevo frito    | 1   | 450 | 95       | 15        | 0.4      | 4      |
+| Almuerzo:      |     |     |          |           |          |        |
+| Lomo embuchado | 10  | 45  | 95       | 15        | 0.4      | 4      |
+| Comida         | -   | -   | -        | -         | -        | -      |
+| Lentejas       | 1   | 450 | 95       | 15        | 0.4      | 4      |
+| yogur          | 1   | 450 | 95       | 15        | 0.4      | 4      |
+| Merienda       | -   | -   | -        | -         | -        | -      |
+| mandarina      | 1   | 450 | 95       | 15        | 0.4      | 4      |
+| cena           | -   | -   | -        | -         | -        | -      |
+| judías verdes  | 1   | 450 | 95       | 15        | 0.4      | 4      |
+
+
+-------------------------------------------------------------------
+Copyright © Diego Sanz - 2023   GitHub · Privacy · Terms · Contact
+-------------------------------------------------------------------
+```
+
+## Nutricionista
+
+### Home nutricionista
+
+```
+contexto: Bob (nutricionista) logueado
+url: /nutricionist 
+-------------------------------------------------------------------
+NutriBalance               Home Quienes Somos Contacto    Bob v 
+-------------------------------------------------------------------
+
+[*desplegable clientes*]
+|----------------------|
+| Alice Martinez       |
++----------------------+
+
+-------------------------------------------------------------------
+Copyright © Diego Sanz - 2023   GitHub · Privacy · Terms · Contact
+-------------------------------------------------------------------
+```
+
+### Perfil cliente
+
+```
+contexto: Bob (nutricionista) logueado
+url: /client/1 (id de alice)
+-------------------------------------------------------------------
+NutriBalance               Home Quienes Somos Contacto    Bob v 
+-------------------------------------------------------------------
+
+Alice Martinez
+
+[Gestionar dieta *to:/dieta/1] [Actualizar cáclulo de calorías *to:modal*]
+
+Dieta hoy:              |       Dieta mañana:               
+- Desayuno:             |       - Desayuno:              
+  - huevo frito         |         - huevo frito          
+- Almuerzo:             |       - Almuerzo:              
+  - Lomo embuchado     |         - Lomo embuchado      
+- Comida:               |       - Comida:                
+  - Lentejas           |         - Lentejas            
+  - Yogur               |         - Yogur                
+- Merienda:             |       - Merienda:              
+  - Mandarina           |         - Mandarina            
+- Cena:                 |       - Cena:                  
+  - Judias verdes       |         - Judias verdes        
+
+
+Evolución
+
+kg
+|
+|
+|
+| ____
+|     \_____                    __
+|           \__________________/
+| 
++----------------------------------- dia
+
+
+
+-------------------------------------------------------------------
+Copyright © Diego Sanz - 2023   GitHub · Privacy · Terms · Contact
+-------------------------------------------------------------------
+```
+
+### Dieta cliente
+
+```
+contexto: Bob (nutricionista) logueado
+url: /dieta/4 (id de dieta de alice)
+-------------------------------------------------------------------
+NutriBalance              Home Quienes Somos Contacto    Bob v 
+-------------------------------------------------------------------
+
+Alice Martinez
+
+Historial de dietas: [ normal *dropdown*  v]
+                     |---------------------|
+                     | 1 - hipocalorica    |
+                     | 2 - hipercalorica   |
+                     | 4 - normal (actual) |
+                     +---------------------+
+
+Fecha inicio: 11/11/11
+*si* Fecha finalización: 11/11/12
+
+
+
+*si dieta=actual*
+Seleccionar día: [<] [*datepicker limitado, default: hoy*] [>]
+
+Dieta:
+
+calorías: 1875/2000 kcal
+proteínas: 123g
+hidratos: 3g
+grasas: 12g
+
+|                | uds | g   | calorías | proteínas | hidratos | grasas |
+|:-------------- | --- | --- | -------- | --------- | -------- | ------ |
+| Desayuno:      | -   | -   | -        | -         | -        | -      |
+| huevo frito    | 1   | 450 | 95       | 15        | 0.4      | 4      |
+| Almuerzo:      |     |     |          |           |          |        |
+| Lomo embuchado | 10  | 45  | 95       | 15        | 0.4      | 4      |
+| Comida         | -   | -   | -        | -         | -        | -      |
+| Lentejas       | 1   | 450 | 95       | 15        | 0.4      | 4      |
+| yogur          | 1   | 450 | 95       | 15        | 0.4      | 4      |
+| Merienda       | -   | -   | -        | -         | -        | -      |
+| mandarina      | 1   | 450 | 95       | 15        | 0.4      | 4      |
+| cena           | -   | -   | -        | -         | -        | -      |
+| judías verdes  | 1   | 450 | 95       | 15        | 0.4      | 4      |
+
+
+-------------------------------------------------------------------
+Copyright © Diego Sanz - 2023   GitHub · Privacy · Terms · Contact
+-------------------------------------------------------------------
+```
+
+
+
+
+
+
 
 ---
 
