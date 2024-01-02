@@ -233,6 +233,7 @@ Fuente: [django](https://docs.djangoproject.com/en/5.0/howto/deployment/wsgi/mod
 - [Django](https://www.djangoproject.com/)
 - [htmx](https://htmx.org/)
 - [Extensión django-htmx](https://django-htmx.readthedocs.io/)
+- [Extensión django-debug-toolbar](https://django-debug-toolbar.readthedocs.io/)
 - [Bootstrap](https://getbootstrap.com/)
 - [Plantilla por Start Bootstrap](https://startbootstrap.com/template/modern-business)
 - [Generador de personas](https://thispersondoesnotexist.com/)
