@@ -503,3 +503,29 @@ Copyright © Diego Sanz - 2023   GitHub · Privacy · Terms · Contact
 - Redirección a proto-pagina home por grupo 
 - Ampliación about me
 - Ampliacion contacto
+
+2/1/24
+
+- Desplegar iteración 2
+- Añadir extensión django-admin-panel
+- Empezar con los alimentos
+- Mockups de:
+  - /profile
+  - /profile/id
+  - /dieta
+  - /dieta/id
+  - /nutricionist
+- Collect static
+- Desplegar mockups
+
+
+
+to do:
+- Refactorizar urls.py
+- arreglar formulario de contacto
+
+calculo de comidas:
+- Seleccionar platos aceptados 
+- Catalogar alimentos aceptados 
+- Mostrar calorías objetivo en cal y tipo en %
+- Boton de cambiar alimento / comida
