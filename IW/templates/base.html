@@ -27,9 +27,10 @@
 
   <script src="{% static 'js/htmx.min.js' %}" defer></script>
 
+  <script src="{% static 'js/django-htmx.js' %}"></script>
+
   {% block style %}{% endblock style %}
 
-  {% django_htmx_script %}
 </head>
 
 <body class="d-flex flex-column h-100" hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
