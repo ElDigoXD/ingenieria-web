@@ -518,6 +518,10 @@ Copyright © Diego Sanz - 2023   GitHub · Privacy · Terms · Contact
 - Collect static
 - Desplegar mockups
 
+3/1/24
+
+- Importar chart.js
+- Mockups profile y nutricionist a plantillas
 
 
 to do:
