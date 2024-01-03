@@ -3,25 +3,22 @@
 {% load static %}
 
 {% block title %}
-{% trans "Iniciar de sesión" %}
+{% trans "Nutricionista" %}
 {% endblock %}
 
 {% block main %}
-<h1 class="ms-5 mt-5">Mockup</h1>
-<pre class="m-5">
-contexto: Bob (nutricionista) logueado
-url: /nutricionist 
--------------------------------------------------------------------
-NutriBalance               Home Quienes Somos Contacto    Bob v 
--------------------------------------------------------------------
 
-[*desplegable clientes*]
-|----------------------|
-| Alice Martinez       |
-+----------------------+
-
--------------------------------------------------------------------
-Copyright © Diego Sanz - 2023   GitHub · Privacy · Terms · Contact
--------------------------------------------------------------------
-</pre>
+<div class="m-5">
+  <h2>Clientes</h2>
+  <select class="form-select col-auto" name="client" hx-post="{% url 'profile' %}" hx-swap="none">
+    <option selected disabled hidden>Seleccione un cliente...</option>
+{% if debug %}
+    <option value="1">Alice</option>
+{% endif %}    
+{% for cliente in clientes %}
+  <option value="{{client.id}}">{{client.first_name}} {{client.lastname}}</option>
+{% endfor %}
+  
+  </select>
+</div>
 {% endblock main %}

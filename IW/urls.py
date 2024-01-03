@@ -35,6 +35,7 @@ urlpatterns = i18n_patterns(
     path('login', login, name="login"),
     path('login-form', login_form, name="login-form"),
     path('logout', lambda x: redirect("home") if logout(x) else redirect("home") , name="logout"),  # type: ignore
-    path('profile', lambda x: render(x, "profile.html"), name="profile"),
+    path('profile', profile, name="profile"),
+    path('profile/<int:id>', profile_id, name="profile"),
     path('nutricionist', lambda x: render(x, "nutricionist.html"), name="nutricionist"),
 )

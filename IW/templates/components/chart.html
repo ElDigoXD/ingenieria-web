@@ -1,0 +1,39 @@
+<canvas id="{{ chart.canvas_id }}" style="width:100%;max-width:700px; margin: 10px;"></canvas>
+<script>
+    (() => {
+        let chart = new Chart('{{ chart.canvas_id }}', {
+            type: "{{ chart.type }}",
+            data: {
+                labels: {{ chart.x_labels }},
+                datasets: [
+                    {% for dataset in chart.datasets %}
+                        {
+                            label: "{{ dataset.label }}",
+                            backgroundColor: "{{ dataset.background_color }}",
+                            borderColor: "{{ dataset.border_color }}",
+                            data: {{ dataset.data }},
+                            yAxisID: "{{ dataset.y_axis_id }}"
+                        },
+                    {% endfor %}
+                ]
+
+            },
+            options: {
+                legend: {display: {{ chart.legend|lower }}},
+                scales: {
+                    yAxes: [
+                        {% for scale in chart.scales %}
+                            {
+                                type: 'linear',
+                                display: true,
+                                position: '{{ scale.position }}',
+                                id: "{{ scale.name }}",
+                                {{ scale.ticks }}
+                            },
+                        {% endfor %}
+                    ]
+                }
+            }
+        })
+    })()
+</script>

@@ -3,56 +3,95 @@
 {% load static %}
 
 {% block title %}
-{% trans "Iniciar de sesión" %}
+{% trans "Perfil" %}
 {% endblock %}
 
+
+{% block style %}
+{% endblock style %}
+  
+
 {% block main %}
-<h1 class="ms-5 mt-5">Mockup</h1>
-<pre class="m-5">
-contexto: Alice (cliente) logueada
-url: /profile
--------------------------------------------------------------------
-NutriBalance              Home Quienes Somos Contacto    Alice v 
--------------------------------------------------------------------
 
-Alice Martinez
+<div class="m-5">
+  <h2>{{ user.first_name }} {{ user.last_name}}</h2>
+  <div class="d-flex">
+    <div class="col-auto">
+    <h4>Dieta hoy:</h4>
+    <ul>
+      <li>Desayuno</li>
+      <ul>
+        <li>Huevo frito</li>
+      </ul>
+      <li>Almuerzo</li>
+      <ul>
+        <li>Lomo embuchado</li>
+      </ul>
+      <li>Comida</li>
+      <ul>
+        <li>Lentejas</li>
+        <li>Yogur</li>
+      </ul>
+      <li>Merienda</li>
+      <ul>
+        <li>Mandarina</li>
+      </ul>
+      <li>Cena</li>
+      <ul>
+        <li>Judias verdes</li>
+      </ul>
+    </ul>
+  </div>
+  <div class="vr col-2 mx-3"></div>
+    <div class="col-3">
+      <h4>Dieta mañana:</h4>
+      <ul>
+        <li>Desayuno</li>
+        <ul>
+          <li>Huevo frito</li>
+        </ul>
+        <li>Almuerzo</li>
+        <ul>
+          <li>Lomo embuchado</li>
+        </ul>
+        <li>Comida</li>
+        <ul>
+          <li>Lentejas</li>
+          <li>Yogur</li>
+        </ul>
+        <li>Merienda</li>
+        <ul>
+          <li>Mandarina</li>
+        </ul>
+        <li>Cena</li>
+        <ul>
+          <li>Judias verdes</li>
+        </ul>
+      </ul>
+      </div>
+  </div>
+  <a class="btn btn-primary" href="{ url 'diet' }">Consultar detalles de la dieta</a>
 
+  <h2>Evolución</h2>
+  <form method="post" class="row">
+{% if not weight %}
+    <div class="col-4" style="max-width: 10rem;">
+      <input class="form-control" type="number" name="kg" placeholder="KG" />
+    </div>
+    <div class="col-auto">
+      <button class="btn btn-primary" type="submit">Añadir peso de hoy</button>
+    </div>
+{% else %}
+    <div class="col-4" style="max-width: 10rem;">
+      <input class="form-control" type="number" name="kg" placeholder="KG" value="{{weight}}"/>
+    </div>
+    <div class="col-auto">
+      <button class="btn btn-primary" type="submit">Actualizar peso de hoy</button>
+    </div>
+{% endif %}
+  </form>
 
-Dieta hoy:              |       Dieta mañana:               
-- Desayuno:             |       - Desayuno:              
-  - huevo frito         |         - huevo frito          
-- Almuerzo:             |       - Almuerzo:              
-  - Lomo embuchado      |         - Lomo embuchado      
-- Comida:               |       - Comida:                
-  - Lentejas            |         - Lentejas            
-  - Yogur               |         - Yogur                
-- Merienda:             |       - Merienda:              
-  - Mandarina           |         - Mandarina            
-- Cena:                 |       - Cena:                  
-  - Judias verdes       |         - Judias verdes        
-
-
-[Consultar detalles de la dieta *to: /dieta*]
-
-Evolución
-
-[*campo numerico* kg]  [Añadir peso de hoy] 
-*si se ha añadido:*
-[*campo numerico* 70kg]  [Actualizar peso de hoy] 
-
-
-kg
-|
-|
-|
-| ____
-|     \_____                    __
-|           \__________________/
-| 
-+----------------------------------- dia
-
--------------------------------------------------------------------
-Copyright © Diego Sanz - 2023   GitHub · Privacy · Terms · Contact
--------------------------------------------------------------------
-</pre>
+  <!--chart-->
+  {% include "components/chart.html" %}
+</div>
 {% endblock main %}
