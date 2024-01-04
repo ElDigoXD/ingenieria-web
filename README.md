@@ -582,6 +582,16 @@ Copyright © Diego Sanz - 2023   GitHub · Privacy · Terms · Contact
 - Importar chart.js
 - Mockups profile y nutricionist a plantillas
 
+4/1/24
+- Mockup diet a plantilla con paginación
+- Reunion meet
+- Redactar:
+  - Introducción, Motivación y Objetivos
+  - Estado del arte
+  - Presentación de la propuesta
+  - Arquitectura de la propuesta
+  - Arquitectura de contenidos
+- Ordenar el README con formato memoria
 
 to do:
 - CRUD Usuarios
