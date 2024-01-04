@@ -1,14 +1,22 @@
 # Índice
-
-- [Público objetivo](#Público-objetivo)
-- [Historias de usuario](#Historias-de-usuario)
-- [Iteraciones](#Iteraciones)
-- [Instalación](#Instalación)
+- [Introducción, Motivación y Objetivos](#introducción-motivación-y-objetivos) 
+- [Estado del arte](#estado-del-arte)
+- [Presentación de la propuesta](#presentación-de-la-propuesta)
+- [Arquitectura propuesta](#arquitectura-propuesta)
+  - [Servidor](##Servidor)
+  - [Cliente](##Cliente)
+- [Arquitectura de contenidos](#arquitectura-de-contenidos)
+- [Ingeniería de requisitos](#ingeniería-de-requisitos)
+  - [Público objetivo](##Público-objetivo)
+  - [Historias de usuario](##Historias-de-usuario)
+  - [Iteraciones](#Iteraciones)
+- [Referencias](#Referencias)
+- [Anexo: Instalación](#anexo-instalación)
 	- [Desarrollo](##Versión-de-desarrollo)
 	- [Producción](##Versión-de-producción)
-- [Referencias](#Referencias)
-- [Mockups](#Mockups)
-- [Historial](#Historial)
+- [Anexo: Mockups](#anexo-mockups)
+- [Anexo: Historial](#anexo-historial)
+
 ---
 
 Tareas por hacer
@@ -20,27 +28,92 @@ Tareas por hacer
 - [ ] Listar los requisitos no funcionales en limpio
 - [ ] ---
 - [x] Permitir conexiones 0.0.0.0
-- [ ] Añadir admin a static
+- [x] Añadir admin a static
 - [ ] Apache https
 - [ ] ---
-- [ ] Redactar Introducción, Motivación y Objetivos
-- [ ] Buscar el estado del arte
-- [ ] Definir arquitectura
-- [ ] Mapa del sitio web (arbol)
-- [ ] Despliegue en VM
+- [x] Redactar Introducción, Motivación y Objetivos
+- [x] Buscar el estado del arte
+- [x] Definir arquitectura
+- [x] Mapa del sitio web (arbol)
+- [x] Despliegue en VM
 - [ ] Conclusiones
 - [ ] Bibliografía
 
 ---
 
-# Público objetivo
+# Introducción, Motivación y Objetivos 
 
-## Visitante / Anónimo
+Debido a la importancia de las aplicaciones web en el ámbito del desarrollo de software, permitiendo ser accedidas desde la mayoría de dispositivos, en este proyecto se pretende crear una aplicación web utilizando las principales tecnologías front end (HTML, CSS y JS) y un framework como back end (Django).
+
+Esta práctica se motiva por la necesidad de aprender a diseñar un proyecto web e implementarlo ya que requiere de conceptos realmente útiles para un ingeniero informático.
+
+Los objetivos de este proyecto son:
+- Realizar un análisis de requisitos y definir iteraciones
+- Crear una aplicación web responsive siguiendo las iteraciones
+
+# Estado del arte
+
+Existen varias páginas web relacionadas con servicios de nutrición online como [Yo Elijo Cuidarme](https://sdo.yoelijocuidarme.es), [Carla Mi Nutricionista](https://carlaminutricionista.com) y [Ana Maté Dietista Nutricionista](https://anamatedietista.com). Éstas se centran en ofrecer un servicio completamente online e incluyen blogs con contenido educacional.
+
+En este proyecto se propone una aplicación web como apoyo a las sesiones presenciales en vez de a sesiones online.
+
+# Presentación de la propuesta
+
+La propuesta se basa en la proporcionada por los profesores sobre un sistema de nutrición.
+
+Se toman las siguientes consideraciones respecto a la propuesta proporcionada:
+- Las consultas de los clientes con el nutricionista son presenciales.
+- El objetivo del sistema es realizar un seguimiento de los clientes y generar dietas para ellos, las cuales podrán consultar.
+- Los alimentos proporcionados se encuentran normalizados, es decir, todas las medidas se realizan sobre 100g, por lo que se tendrán que crear platos o raciones.
+
+Un nutricionista con una clínica quiere un sistema de nutrición web para realizar el seguimiento de sus clientes, a los que les realiza consultas presenciales. 
+
+# Arquitectura propuesta
+
+La arquitectura propuesta se basa en una arquitectura web cliente-servidor, en la que el cliente se comunica con el servidor mediante HTTP.
+
+## Servidor
+
+El servidor (o backend) se desarrollará mediante el framework [Django](https://www.djangoproject.com/), el cuál es el más popular para el lenguaje [Python](https://www.python.org/). Esta elección se motiva por el conocimiento previo del autor y su popularidad. Este framework provee una arquitectura modelo-vista-controlador (MVC) y consta de funcionalidades como enrutamiento, ORM, plantillas y muchas otras funcionalidades que se pueden encontrar en otros frameworks de backend. Además, permite el uso de extensiones para ampliar sus funcionalidades. Las principales extensiones utilizadas son:
+
+- [Django-htmx](https://github.com/adamchainz/django-htmx): conveniencia con la librería del frontend
+- [Django-Rosetta](https://django-rosetta.readthedocs.io): interfaz para la internacionalización
+
+## Cliente
+
+El cliente (o frontend) se desarrollará mediante las plantillas ofrecidas por Django, las cuales extienden y generan HTML. CSS para los estilos con la ayuda de la popular librería [Bootstrap](https://getbootstrap.com/), la cuál reduce la necesidad de escribir hojas de estilos gracias a las clases predefinidas. Por último se utilizará JavaScript para ofrecer una interfaz más dinámica y algunas librerías como una extensión para algunas funcionalidades de Bootstrap, [Chart.js](https://www.chartjs.org/) para la creación de gráficos y [htmx](https://htmx.org). Esta última librería permite, principalmente, sustituir partes de la pagina web por HTML ofrecido por el servidor. 
+
+> Posible diagrama de frontend <--> backend como el de SATD.
+
+# Arquitectura de contenidos
+
+Todos los usuarios:
+Home -> Quienes somos
+Home -> Contacto
+Home -> Iniciar Sesión
+
+Usuario registrado (cliente):
+Iniciar Sesión -> Perfil
+Iniciar Sesión -> Perfil -> Cerrar sesión (home)
+Iniciar Sesión -> Perfil -> Dieta
+
+Usuario administrador (dietista)
+Iniciar Sesión -> Nutricionista
+Iniciar Sesión -> Nutricionista -> Perfil cliente
+Iniciar Sesión -> Nutricionista -> Perfil cliente -> Dietas cliente
+
+> Iniciar Sesión -> Nutricionista -> CRUD Cliente 
+
+# Ingeniería de requisitos
+
+## Público objetivo
+
+### Visitante / Anónimo
 
 - Ver página de inicio, about me, contacto, etc.
 
 
-## Cliente / Registrado
+### Cliente / Registrado
 
 - Iniciar sesión
 - Consultar dieta
@@ -48,7 +121,7 @@ Tareas por hacer
 - ¿Añadir seguimiento?
 - Contactar con el nutricionista
 
-## Nutricionista / admin
+### Nutricionista / admin
 
 - Iniciar sesión
 - Gestionar clientes 
@@ -59,9 +132,7 @@ Tareas por hacer
 * Evolución del cliente
 - Copiar y modificar dietas.
 
----
-
-# Historias de usuario
+## Historias de usuario
 
 Los criterios se validarán junto al usuario en pruebas de funcionalidad.
 
@@ -128,11 +199,9 @@ Los criterios se validarán junto al usuario en pruebas de funcionalidad.
     - Copiar dietas
     - Modificar dietas
 
----
+## Iteraciones
 
-# Iteraciones
-
-## Iteración 1
+### Iteración 1
 
 Implementar la página web base funcional que permita a los visitantes anónimos cumplir todas sus historias.
 
@@ -142,7 +211,7 @@ Implementar la página web base funcional que permita a los visitantes anónimos
 - Implementar página about me
 - Implementar página contacto
 
-## Iteración 2 (Revisable) 
+### Iteración 2
 
 Implementar login, sesiones y autenticación para diferenciar los roles.
 
@@ -151,7 +220,7 @@ Implementar login, sesiones y autenticación para diferenciar los roles.
 - Implementar botón de logout
 - Crear la base para una página "home" personalizada dependiendo del rol
 
-## Iteración 3 (Revisable) 
+### Iteración 3 (Revisable) 
 
 Implementar la CRUD de las dietas y el seguimiento
 
@@ -163,7 +232,7 @@ Implementar la CRUD de las dietas y el seguimiento
 - Modificar la página "home" personalizada del rol con las nuevas funcionalidades
 - Cargar los alimentos en la BBDD
 
-## Iteración 4 (Revisable) 
+### Iteración 4 (Revisable) 
 
 - Historias 7, 9
 Crear CRUD de los alimentos y de los usuarios (nutricionista)
@@ -171,12 +240,12 @@ Crear CRUD de los alimentos y de los usuarios (nutricionista)
 - Implementar página de gestión de usuarios con posibilidad de CRUD
 - Implementar página de gestión de alimentos con posibilidad de CRUD
 
-## Iteración 5 (Revisable) 
+### Iteración 5 (Revisable) 
 
 A definir. ¿6, 8, 10?
 
 
----
+
 
 Requisitos en sucio:
 
@@ -199,9 +268,18 @@ Requisitos en sucio:
 - calcular calorías necesarias
 - variar formulas calorías
 
----
+# Referencias
 
-# Instalación
+- [Django](https://www.djangoproject.com/)
+- [htmx](https://htmx.org/)
+- [Extensión django-htmx](https://django-htmx.readthedocs.io/)
+- [Extensión django-debug-toolbar](https://django-debug-toolbar.readthedocs.io/)
+- [Bootstrap](https://getbootstrap.com/)
+- [Plantilla por Start Bootstrap](https://startbootstrap.com/template/modern-business)
+- [Generador de personas](https://thispersondoesnotexist.com/)
+
+
+# Anexo: Instalación
 
 ## Versión de desarrollo
 
@@ -227,21 +305,8 @@ Requisitos en sucio:
 
 Fuente: [django](https://docs.djangoproject.com/en/5.0/howto/deployment/wsgi/modwsgi/)
 
----
 
-# Referencias
-
-- [Django](https://www.djangoproject.com/)
-- [htmx](https://htmx.org/)
-- [Extensión django-htmx](https://django-htmx.readthedocs.io/)
-- [Extensión django-debug-toolbar](https://django-debug-toolbar.readthedocs.io/)
-- [Bootstrap](https://getbootstrap.com/)
-- [Plantilla por Start Bootstrap](https://startbootstrap.com/template/modern-business)
-- [Generador de personas](https://thispersondoesnotexist.com/)
-
----
-
-# Mockups
+# Anexo: Mockups
 
 ## Cliente
 
@@ -453,15 +518,9 @@ Copyright © Diego Sanz - 2023   GitHub · Privacy · Terms · Contact
 -------------------------------------------------------------------
 ```
 
-
-
-
-
-
-
 ---
 
-# Historial
+# Anexo: Historial
 
 20/12/23
 
@@ -525,7 +584,9 @@ Copyright © Diego Sanz - 2023   GitHub · Privacy · Terms · Contact
 
 
 to do:
+- CRUD Usuarios
 - Refactorizar urls.py
+- Acercarse más a la plantilla
 - arreglar formulario de contacto
 
 calculo de comidas:
