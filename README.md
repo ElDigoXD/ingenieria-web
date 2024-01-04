@@ -12,8 +12,8 @@
   - [Iteraciones](#Iteraciones)
 - [Referencias](#Referencias)
 - [Anexo: Instalación](#anexo-instalación)
-	- [Desarrollo](##Versión-de-desarrollo)
-	- [Producción](##Versión-de-producción)
+  - [Desarrollo](##Versión-de-desarrollo)
+  - [Producción](##Versión-de-producción)
 - [Anexo: Mockups](#anexo-mockups)
 - [Anexo: Historial](#anexo-historial)
 
@@ -326,9 +326,9 @@ Dieta hoy:              |       Dieta mañana:
 - Desayuno:             |       - Desayuno:              
   - huevo frito         |         - huevo frito          
 - Almuerzo:             |       - Almuerzo:              
-  - Lomo embuchado     |         - Lomo embuchado      
+  - Lomo embuchado      |         - Lomo embuchado      
 - Comida:               |       - Comida:                
-  - Lentejas           |         - Lentejas            
+  - Lentejas            |         - Lentejas            
   - Yogur               |         - Yogur                
 - Merienda:             |       - Merienda:              
   - Mandarina           |         - Mandarina            
