@@ -1,0 +1,173 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}
+{% trans "Dieta" %}
+{% endblock %}
+
+
+{% block style %}
+{% endblock style %}
+  
+
+{% block main %}
+
+<div class="m-5">
+  <h2>{{ user.first_name }} {{ user.last_name}}</h2>
+  <div id="dateSelector" class="row">
+    <div class="col-auto">
+      <label class="col-form-label">Seleccionar día: </label>
+    </div>
+    <div class="col-auto">
+      <button 
+        id="prev" 
+        name="prev" 
+        value="prev"
+        class="btn btn-outline-secondary" 
+        hx-post="{% url 'diet' %}" 
+        hx-target="body" 
+        hx-include="#date, #prev" 
+        hx-swap="body"
+{% if date_min == date_selected %}disabled{% endif %}
+        >
+          &lt;
+      </button>
+    </div>
+    <div class="col-auto">
+      <input 
+      class="form-control" 
+      id="date" 
+      type="date" 
+      name="date" 
+      onkeydown="return false"
+      min="{{date_min}}" 
+      max="{{date_max}}" 
+      value="{{date_selected}}"
+      hx-post="{% url 'diet' %}"
+      hx-target="body"
+      ></input>
+    </div>
+    <div class="col-auto">
+      <button 
+        id="next" 
+        name="next" 
+        value="next"
+        class="btn btn-outline-secondary" 
+        hx-post="{% url 'diet' %}" 
+        hx-target="body" 
+        hx-include="#date, #next" 
+        hx-swap="body"
+{% if date_max == date_selected %}disabled{% endif %}
+        >
+          &gt;
+      </button>
+    </div>
+  </div>
+
+  <h3>Dieta</h3>
+
+  <p class="my-0">Calorías: 1234/2000 kcal</p>
+  <p class="my-0">Proteínas: 123g</p>
+  <p class="my-0">Hidratos: 3g</p>
+  <p class="my-0">Grasas: 23g</p>
+  <div class="table-responsive col-auto">
+  <table class="table w-auto">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Uds</th>
+          <th>g</th>
+          <th>kcal</th>
+          <th>Proteínas</th>
+          <th>Hidratos</th>
+          <th>Grasas</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>Desayuno</th>
+          <td><hr></td>
+          <td><hr></td>
+          <td><hr></td>
+          <td><hr></td>
+          <td><hr></td>
+          <td><hr></td>
+        </tr>
+        <tr>
+          <td>- Huevo frito</td>
+          <td>1</td>
+          <td>450</td>
+          <td>95</td>
+          <td>15</td>
+          <td>0.4</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <th>Almuerzo</th>
+          <td><hr></td>
+          <td><hr></td>
+          <td><hr></td>
+          <td><hr></td>
+          <td><hr></td>
+          <td><hr></td>
+        </tr>
+        <tr>
+          <td>- Huevo frito</td>
+          <td>1</td>
+          <td>450</td>
+          <td>95</td>
+          <td>15</td>
+          <td>0.4</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <th>Comida</th>
+          <td><hr></td>
+          <td><hr></td>
+          <td><hr></td>
+          <td><hr></td>
+          <td><hr></td>
+          <td><hr></td>
+        </tr>
+        <tr>
+          <td>- Huevo frito</td>
+          <td>1</td>
+          <td>450</td>
+          <td>95</td>
+          <td>15</td>
+          <td>0.4</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>- Huevo frito</td>
+          <td>1</td>
+          <td>450</td>
+          <td>95</td>
+          <td>15</td>
+          <td>0.4</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <th>Merienda</th>
+          <td><hr></td>
+          <td><hr></td>
+          <td><hr></td>
+          <td><hr></td>
+          <td><hr></td>
+          <td><hr></td>
+        </tr>
+        <tr>
+          <th>Cena</th>
+          <td><hr></td>
+          <td><hr></td>
+          <td><hr></td>
+          <td><hr></td>
+          <td><hr></td>
+          <td><hr></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock main %}

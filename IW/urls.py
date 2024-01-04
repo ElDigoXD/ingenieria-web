@@ -38,4 +38,5 @@ urlpatterns = i18n_patterns(
     path('profile', profile, name="profile"),
     path('profile/<int:id>', profile_id, name="profile"),
     path('nutricionist', lambda x: render(x, "nutricionist.html"), name="nutricionist"),
+    path('test-diet', diet, name="diet"),
 )
