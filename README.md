@@ -10,6 +10,7 @@
   - [Público objetivo](##Público-objetivo)
   - [Historias de usuario](##Historias-de-usuario)
   - [Iteraciones](#Iteraciones)
+- [Detalles de la implementación](#detalles-de-la-implementación)
 - [Referencias](#Referencias)
 - [Anexo: Instalación](#anexo-instalación)
   - [Desarrollo](##Versión-de-desarrollo)
@@ -267,6 +268,48 @@ Requisitos en sucio:
 - copiar dietas
 - calcular calorías necesarias
 - variar formulas calorías
+
+# Detalles de la implementación
+
+En esta sección se detallará como se han implementado diferentes funcionalidades de la aplicación.
+
+## Plantilla
+
+La interfaz web se basa en una plantilla licenciada bajo MIT creada por [Start Bootstrap](https://startbootstrap.com/template/modern-business) la cuál contiene varias páginas de ejemplo que han sido modificadas para adaptarse a las necesidades de este proyecto.
+
+## Internacionalización y localización 
+
+Para llevar a cabo la internacionalización (o i18n) y localización (o l10n) se ha utilizado la funcionalidad ofrecida por el framework Django siguiendo la [documentación ofrecida](https://docs.djangoproject.com/en/5.0/topics/i18n/).
+
+La internacionalización se define como la preparación del programa para soportar localización. Y la localización se define como la traducción de textos y formatos.
+
+Para configurar Django para que utilize estas funcionalidades, ha sido necesario añadir varias lineas al archivo de configuración como utilizar i18n, utilizar l10n, utilizar zonas horarias, la zona horaria y el código del lenguaje por defecto.
+
+Una vez configurado se permite el uso de la función `gettext()` en python para acceder a las traducciones dependiendo del lenguaje activo. También se puede cargar el módulo i18n en las plantillas para acceder a las etiquetas `trans` y `blocktrans`. Para obtener el archivo de las traducciones en formato `.po` se utiliza la herramienta `django-admin makemessages`. Este archivo se puede abrir con programas orientados a la traducción, en el caso de este proyecto, se ha utilizado la extensión [django-rosetta](https://django-rosetta.readthedocs.io), la cuál ofrece una interfaz web para ello. Una vez creadas las traducciones es necesario compilarlas (django-rosetta lo hace automáticamente) mediante la herramienta `django-admin compilemessages`.
+
+## Htmx
+
+Htmx es una librería escrita en JavaScript que "permite acceder a funcionalidades modernas de los navegadores directamente desde HTML, en vez de utilizar JS." - [htmx docs](https://htmx.org/docs/). Principalmente se ha utilizado para realizar peticiones AJAX (JavaScript asíncrono y XML) y hacer más dinámica la aplicación web.
+
+Esta librería proporciona varios atributos que permiten realizar peticiones (GET, POST, PUT, PATCH y DELETE) y sustituir una parte del documento HTML con la respuesta obtenida. Otros atributos permiten la configuración de triggers, como y donde se realiza la sustitución, etc.
+
+En este proyecto también ha sido utilizada una funcionalidad (boosting) que permite que las tags `a` realicen peticiones AJAX, sustituyendo el `body` del documento. Con esto se consigue una mejor experiencia del usuario y evita tener que recargar la pagina entera.
+
+## Validación de formularios
+
+La validación de los formularios se ha realizado según lo indicado en la [documentación de Bootstrap](https://getbootstrap.com/docs/5.3/forms/validation/) con una modificación del script para hacerlo compatible con htmx.
+
+## Usuarios y roles
+
+Para gestionar los usuarios y sus roles se ha utilizado la funcionalidad de [autenticación integrada en Django](https://docs.djangoproject.com/en/5.0/topics/auth/default/). Django cuenta por defecto con modelos de usuario y grupo, los cuales pueden ser extendidos por el desarrollador. Esta funcionalidad simplifica la gestión de contraseñas y, gracias al modulo de sesiones de Django, obtener y establecer el usuario actual en las peticiones y respuestas.
+
+Algunas de las utilidades ofrecidas son:
+
+- `request.user.is_authenticated`: Comprueba si el usuario esta autenticado y activo.
+- `authenticate(request, username, password)`: Devuelve el usuario si existe en el sistema.
+- `login(request, user)`: Adjunta el usuario a la sesión.
+
+## Gráficos
 
 # Referencias
 
