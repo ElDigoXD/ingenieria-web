@@ -636,6 +636,14 @@ Copyright © Diego Sanz - 2023   GitHub · Privacy · Terms · Contact
   - Arquitectura de contenidos
 - Ordenar el README con formato memoria
 
+5/1/24
+- Redactar:
+  - i18n y l10n
+  - Plantilla
+  - Htmx
+  - Validación de formularios
+  - Usuarios y roles
+
 to do:
 - CRUD Usuarios
 - Refactorizar urls.py
