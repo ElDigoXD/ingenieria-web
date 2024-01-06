@@ -3,18 +3,18 @@
 - [Estado del arte](#estado-del-arte)
 - [Presentación de la propuesta](#presentación-de-la-propuesta)
 - [Arquitectura propuesta](#arquitectura-propuesta)
-  - [Servidor](##Servidor)
-  - [Cliente](##Cliente)
+  - [Servidor](#servidor)
+  - [Cliente](#cliente)
 - [Arquitectura de contenidos](#arquitectura-de-contenidos)
 - [Ingeniería de requisitos](#ingeniería-de-requisitos)
-  - [Público objetivo](##Público-objetivo)
-  - [Historias de usuario](##Historias-de-usuario)
-  - [Iteraciones](#Iteraciones)
+  - [Público objetivo](#público-objetivo)
+  - [Historias de usuario](#historias-de-usuario)
+  - [Iteraciones](#iteraciones)
 - [Detalles de la implementación](#detalles-de-la-implementación)
-- [Referencias](#Referencias)
+- [Referencias](#referencias)
 - [Anexo: Instalación](#anexo-instalación)
-  - [Desarrollo](##Versión-de-desarrollo)
-  - [Producción](##Versión-de-producción)
+  - [Desarrollo](#versión-de-desarrollo)
+  - [Producción](#versión-de-producción)
 - [Anexo: Mockups](#anexo-mockups)
 - [Anexo: Historial](#anexo-historial)
 
@@ -44,7 +44,7 @@ Tareas por hacer
 
 # Introducción, Motivación y Objetivos 
 
-Debido a la importancia de las aplicaciones web en el ámbito del desarrollo de software, permitiendo ser accedidas desde la mayoría de dispositivos, en este proyecto se pretende crear una aplicación web utilizando las principales tecnologías front end (HTML, CSS y JS) y un framework como back end (Django).
+Debido a la importancia de las aplicaciones web en el ámbito del desarrollo de software, permitiendo ser accedidas desde la mayoría de dispositivos, en este proyecto se pretende crear una aplicación web utilizando las principales tecnologías front end (HTML, CSS y JS) y un framework en el backend (Django).
 
 Esta práctica se motiva por la necesidad de aprender a diseñar un proyecto web e implementarlo ya que requiere de conceptos realmente útiles para un ingeniero informático.
 
@@ -56,7 +56,7 @@ Los objetivos de este proyecto son:
 
 Existen varias páginas web relacionadas con servicios de nutrición online como [Yo Elijo Cuidarme](https://sdo.yoelijocuidarme.es), [Carla Mi Nutricionista](https://carlaminutricionista.com) y [Ana Maté Dietista Nutricionista](https://anamatedietista.com). Éstas se centran en ofrecer un servicio completamente online e incluyen blogs con contenido educacional.
 
-En este proyecto se propone una aplicación web como apoyo a las sesiones presenciales en vez de a sesiones online.
+En este proyecto se propone una aplicación web como apoyo a las sesiones presenciales, comparado con las existentes, que se centran en sesiones online.
 
 # Presentación de la propuesta
 
@@ -67,41 +67,42 @@ Se toman las siguientes consideraciones respecto a la propuesta proporcionada:
 - El objetivo del sistema es realizar un seguimiento de los clientes y generar dietas para ellos, las cuales podrán consultar.
 - Los alimentos proporcionados se encuentran normalizados, es decir, todas las medidas se realizan sobre 100g, por lo que se tendrán que crear platos o raciones.
 
-Un nutricionista con una clínica quiere un sistema de nutrición web para realizar el seguimiento de sus clientes, a los que les realiza consultas presenciales. 
-
 # Arquitectura propuesta
 
 La arquitectura propuesta se basa en una arquitectura web cliente-servidor, en la que el cliente se comunica con el servidor mediante HTTP.
 
 ## Servidor
 
-El servidor (o backend) se desarrollará mediante el framework [Django](https://www.djangoproject.com/), el cuál es el más popular para el lenguaje [Python](https://www.python.org/). Esta elección se motiva por el conocimiento previo del autor y su popularidad. Este framework provee una arquitectura modelo-vista-controlador (MVC) y consta de funcionalidades como enrutamiento, ORM, plantillas y muchas otras funcionalidades que se pueden encontrar en otros frameworks de backend. Además, permite el uso de extensiones para ampliar sus funcionalidades. Las principales extensiones utilizadas son:
+El servidor (o backend) se desarrollará mediante el framework [Django](https://www.djangoproject.com/), el cuál es el más popular para el lenguaje [Python](https://www.python.org/). Esta elección se motiva por el conocimiento previo del autor y su popularidad. Este framework provee una arquitectura modelo-vista-controlador (MVC) y consta de funcionalidades como enrutamiento, ORM, plantillas y muchas otras que pueden ser encontradas en otros frameworks de backend (como Laravel). Además, permite el uso de extensiones para ampliar sus funcionalidades. Las principales extensiones utilizadas son:
 
-- [Django-htmx](https://github.com/adamchainz/django-htmx): conveniencia con la librería del frontend
-- [Django-Rosetta](https://django-rosetta.readthedocs.io): interfaz para la internacionalización
+- [Django-htmx](https://github.com/adamchainz/django-htmx): Conveniencia con una librería del frontend.
+- [Django-Rosetta](https://django-rosetta.readthedocs.io): Interfaz para la internacionalización y localización.
 
 ## Cliente
 
-El cliente (o frontend) se desarrollará mediante las plantillas ofrecidas por Django, las cuales extienden y generan HTML. CSS para los estilos con la ayuda de la popular librería [Bootstrap](https://getbootstrap.com/), la cuál reduce la necesidad de escribir hojas de estilos gracias a las clases predefinidas. Por último se utilizará JavaScript para ofrecer una interfaz más dinámica y algunas librerías como una extensión para algunas funcionalidades de Bootstrap, [Chart.js](https://www.chartjs.org/) para la creación de gráficos y [htmx](https://htmx.org). Esta última librería permite, principalmente, sustituir partes de la pagina web por HTML ofrecido por el servidor. 
+El cliente (o frontend) se desarrollará mediante las plantillas ofrecidas por Django, las cuales extienden y generan HTML. Se utilizará CSS para los estilos con la ayuda de la popular librería [Bootstrap](https://getbootstrap.com/), la cuál reduce la necesidad de escribir hojas de estilos gracias a las clases predefinidas que incluye. Por último se utilizará JavaScript para ofrecer una interfaz más dinámica y algunas librerías como una extensión para algunas funcionalidades de Bootstrap, [Chart.js](https://www.chartjs.org/) para la creación de gráficos y [htmx](https://htmx.org). Esta última librería permite, principalmente, sustituir partes de la pagina web por HTML ofrecido por el servidor. 
 
 > Posible diagrama de frontend <--> backend como el de SATD.
 
 # Arquitectura de contenidos
 
 Todos los usuarios:
-Home -> Quienes somos
-Home -> Contacto
-Home -> Iniciar Sesión
+
+- Home -> Quienes somos
+- Home -> Contacto
+- Home -> Iniciar Sesión
 
 Usuario registrado (cliente):
-Iniciar Sesión -> Perfil
-Iniciar Sesión -> Perfil -> Cerrar sesión (home)
-Iniciar Sesión -> Perfil -> Dieta
 
-Usuario administrador (dietista)
-Iniciar Sesión -> Nutricionista
-Iniciar Sesión -> Nutricionista -> Perfil cliente
-Iniciar Sesión -> Nutricionista -> Perfil cliente -> Dietas cliente
+- Iniciar Sesión -> Perfil
+- Iniciar Sesión -> Perfil -> Cerrar sesión (home)
+- Iniciar Sesión -> Perfil -> Dieta
+
+Usuario administrador (dietista):
+
+- Iniciar Sesión -> Nutricionista
+- Iniciar Sesión -> Nutricionista -> Perfil cliente
+- Iniciar Sesión -> Nutricionista -> Perfil cliente -> Dietas cliente
 
 > Iniciar Sesión -> Nutricionista -> CRUD Cliente 
 
@@ -111,16 +112,17 @@ Iniciar Sesión -> Nutricionista -> Perfil cliente -> Dietas cliente
 
 ### Visitante / Anónimo
 
-- Ver página de inicio, about me, contacto, etc.
-
+- Ver página de:
+  - Inicio
+  - Quienes somos
+  - Contacto
 
 ### Cliente / Registrado
 
 - Iniciar sesión
 - Consultar dieta
 - Consultar evolución
-- ¿Añadir seguimiento?
-- Contactar con el nutricionista
+- Añadir seguimiento
 
 ### Nutricionista / admin
 
@@ -130,44 +132,37 @@ Iniciar Sesión -> Nutricionista -> Perfil cliente -> Dietas cliente
 - Generar serie de alimentos para 5 comidas
 - Gestionar alimentos
 - Consultar histórico dietas
-* Evolución del cliente
+- Evolución del cliente
 - Copiar y modificar dietas.
 
 ## Historias de usuario
 
 Los criterios se validarán junto al usuario en pruebas de funcionalidad.
 
-- 1. **Como** visitante **quiero** ver la pagina de inicio **para** informarme sobre el servicio
+1. **Como** visitante **quiero** ver la pagina de inicio **para** informarme sobre el servicio
   - Criterios:
     - La página de inicio contiene información sobre el servicio
     - Permite acceder a una página de contacto
     - Permite acceder a una página de _about me_
 
-- 2. **Como** visitante **quiero** contactar con el nutricionista **para** obtener más información y/o convertirme en cliente
+2. **Como** visitante **quiero** contactar con el nutricionista **para** obtener más información y/o convertirme en cliente
   - Criterios:
     - La página de contacto proveerá información de contacto del nutricionista
-    - También contendrá un correo electrónico con un "mailto:"
 
-- 3. **Como** cliente o nutricionista **quiero** iniciar sesión **para** acceder al servicio
+3. **Como** cliente o nutricionista **quiero** iniciar sesión **para** acceder al servicio
   - Criterios:
     - Todas las páginas accesibles sin iniciar sesión contendrán una manera de hacerlo.
     - Se podrá cerrar sesión desde esas páginas una vez iniciada.
 
-- 4. **Como** cliente **quiero** consultar la dieta **para** alimentarme correctamente
+4. **Como** cliente **quiero** consultar la dieta **para** alimentarme correctamente
   - Criterios:
     - La página del usuario contiene información sobre su dieta activa
 
-- 5. **Como** cliente o nutricionista **quiero** consultar la evolución **para** comprobar si mejora
+5. **Como** cliente o nutricionista **quiero** consultar la evolución **para** comprobar si mejora
   - Criterios:
     - La página del usuario contiene información sobre su evolución
 
-- 6. **Como** cliente **quiero** contactar con el nutricionista **para** consultar mis dudas
-  - Prioridad: muy baja
-  - Criterios:
-    - O existe un formulario para comunicarse con el nutricionista
-    - O se realiza todo por teléfono
-
-- 7. **Como** nutricionista **quiero** gestionar clientes **para** dar de alta, dar de baja y modificar los datos de mis clientes 
+6. **Como** nutricionista **quiero** gestionar clientes **para** dar de alta, dar de baja y modificar los datos de mis clientes 
   - Criterios:
     - Poder dar de alta clientes con su:
       - nombre
@@ -180,21 +175,21 @@ Los criterios se validarán junto al usuario en pruebas de funcionalidad.
     - Poder dar de baja a clientes
     - Poder modificar los datos de los clientes
 
-- 8. **Como** nutricionista **quiero** generar series de alimentos para 5 las comidas del cliente **para** optimizar su ingesta de calorías
+7. **Como** nutricionista **quiero** generar series de alimentos para 5 las comidas del cliente **para** optimizar su ingesta de calorías
   - Criterios:
     - Poder generar una lista de alimentos basada en:
       - grasas
       - proteínas 
       - hidratos de carbono
 
-- 9. **Como** nutricionista **quiero** gestionar los alimentos **para** crear, modificar las propiedades y eliminar alimentos.
+8. **Como** nutricionista **quiero** gestionar los alimentos **para** crear, modificar las propiedades y eliminar alimentos.
   - Criterios:
     - Poder:
       - Crear
       - Modificar las propiedades
       - Y eliminar alimentos
 
-- 10. **Como** nutricionista **quiero** ver dietas anteriores del cliente, copiar y modificar dietas **para** no tener que crearlas desde cero
+9. **Como** nutricionista **quiero** ver dietas anteriores del cliente, copiar y modificar dietas **para** no tener que crearlas desde cero
   - Criterios:
     - Poder ver un historico de dietas del cliente
     - Copiar dietas
@@ -217,36 +212,51 @@ Implementar la página web base funcional que permita a los visitantes anónimos
 Implementar login, sesiones y autenticación para diferenciar los roles.
 
 - Historias: 3
-- Implementar pagina de login (o modal)
+- Implementar pagina de login
 - Implementar botón de logout
 - Crear la base para una página "home" personalizada dependiendo del rol
 
-### Iteración 3 (Revisable) 
+### Iteración 3
 
-Implementar la CRUD de las dietas y el seguimiento
+Implementar CRUD de los usuarios (nutricionista)
 
-- Historias: 4, 5
-- Implementar CRUD de dietas para el nutricionista (nutricionista)
-- Implementar copia de dietas (nutricionista)
-- Implementar consulta de dietas (cliente y nutricionista)
-- Implementar seguimiento del cliente (cliente y nutricionista)
-- Modificar la página "home" personalizada del rol con las nuevas funcionalidades
-- Cargar los alimentos en la BBDD
-
-### Iteración 4 (Revisable) 
-
-- Historias 7, 9
-Crear CRUD de los alimentos y de los usuarios (nutricionista)
-
+- Historias: 6
 - Implementar página de gestión de usuarios con posibilidad de CRUD
-- Implementar página de gestión de alimentos con posibilidad de CRUD
+
+### Iteración 4 (Revisable)
+
+Implementar seguimiento del cliente (cliente y nutricionista) 
+
+- Historias 5
+- Implementaa página del usuario con información sobre su evolución
+- Permitir al usuario registrar su evolución
 
 ### Iteración 5 (Revisable) 
 
-A definir. ¿6, 8, 10?
+Crear CRUD de los alimentos
 
+- Historias 8
+- Cargar los alimentos en la BBDD
+- Implementar página de gestión de alimentos con posibilidad de CRUD
+- Posibilidad de crear _raciones_
 
+### Iteración 6 (Revisable) 
 
+Implementar la CRUD de las dietas
+
+- Historias: 4, 9
+- Implementar CRUD de dietas para el nutricionista (nutricionista)
+- Implementar copia de dietas (nutricionista)
+- Implementar consulta de dietas (cliente y nutricionista)
+
+### Iteración 7 (Revisable) 
+
+Generar 5 comidas basadas en la dieta.
+
+- Historias: 7
+- Generar alimentos
+
+---
 
 Requisitos en sucio:
 
@@ -268,6 +278,8 @@ Requisitos en sucio:
 - copiar dietas
 - calcular calorías necesarias
 - variar formulas calorías
+
+---
 
 # Detalles de la implementación
 
