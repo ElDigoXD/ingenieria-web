@@ -1,6 +1,7 @@
 from .index import index
-from .contact import contact, contact_form
+from .contact import *
 from .about import about
-from .login import login
-from .profile import profile, profile_id
+from .login import *
+from .profile import *
 from .diet import diet
+from .nutricionist import *

@@ -20,8 +20,6 @@ from django.shortcuts import redirect, render
 from django.urls import include, path
 from django.conf.urls.i18n import i18n_patterns
 
-from IW.views.login import login_form
-
 from .views import *
 
 urlpatterns = i18n_patterns(
@@ -37,6 +35,10 @@ urlpatterns = i18n_patterns(
     path('logout', lambda x: redirect("home") if logout(x) else redirect("home") , name="logout"),  # type: ignore
     path('profile', profile, name="profile"),
     path('profile/<int:id>', profile_id, name="profile"),
-    path('nutricionist', lambda x: render(x, "nutricionist.html"), name="nutricionist"),
+    path('nutricionist', nutricionist, name="nutricionist"),
     path('test-diet', diet, name="diet"),
+    path('create-user', createUser, name="create-user"),
+    path('toggle-user/<int:id>', toggleUser, name="toggle-user"),
+    path('delete-user/<int:id>', deleteUser, name="delete-user"),
+    path('update-user/<int:id>', updateUser, name="update-user"),
 )

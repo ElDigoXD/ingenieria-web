@@ -14,7 +14,31 @@
 {% block main %}
 
 <div class="m-5">
-  <h2>{{ user.first_name }} {{ user.last_name}}</h2>
+  <h1>{{ client.first_name }} {{ client.last_name}}</h1>
+{% if nutricionist %}
+  <button 
+    class="btn btn-outline-primary" 
+    hx-target="body" 
+    hx-get="{% url 'update-user' client.id %}"
+    hx-push-url="true">
+    Modificar usuario
+  </button>
+  <button 
+    class="btn btn-outline-secondary" 
+    name="toggleButton" 
+    hx-target="body" 
+    hx-post="{% url 'toggle-user' client.id %}">
+    {% if client.is_active %} Desactivar {% else %} Activar {% endif %} usuario
+  </button>
+  <button 
+    class="btn btn-outline-danger" 
+    name="deleteButton" 
+    hx-target="body" 
+    hx-delete="{% url 'delete-user' client.id %}"
+    hx-confirm="Esta acción no se podrá deshacer">
+    Eliminar usuario
+  </button>
+{% endif %}
   <div class="d-flex">
     <div class="col-auto">
     <h4>Dieta hoy:</h4>

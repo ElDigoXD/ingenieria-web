@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}
+{% trans "Usuario" %}
+{% endblock %}
+
+{% block main %}
+<!-- Page content -->
+<section class="py-5">
+    <div class="container px-5">
+        <!-- Contact form -->
+        <div id="form_container" class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
+            <div class="text-center mb-5">
+{% if update %}
+                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3">
+                    <i class="bi bi-person"></i>
+                </div>
+                <h1 class="fw-bolder">Actualizar usuario</h1>
+{% else %}
+                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3">
+                    <i class="bi bi-person-plus"></i>
+                </div>
+                <h1 class="fw-bolder">Dar de alta</h1>
+{% endif %}
+            </div>
+            <div class="row gx-5 justify-content-center">
+                <div class="col-lg-8 col-xl-6">
+                    <form 
+                      id="mainForm" 
+                      class="needs-validation" 
+                      {% if update %} hx-post="{% url 'update-user' crud_user.id %}" {% else %} hx-post="{% url 'create-user' %}" {% endif %}
+                      hx-trigger="bs-send"
+                      hx-swap="outerHTML"
+                      hx-target="body"
+                      novalidate>
+                      <div class="form-floating mb-3">
+                        <input class="form-control" id="first_name" name="first_name" type="text" placeholder="Nombre" value="{{ crud_user.first_name }}" required/>
+                        <label for="first_name">Nombre</label>
+                      </div>
+                      <div class="form-floating mb-3">
+                        <input class="form-control" id="last_name" name="last_name" type="text" placeholder="Apellidos" value="{{ crud_user.last_name }}" required/>
+                        <label for="last_name">Apellidos</label>
+                      </div>
+                      <div class="form-floating mb-3">
+                        <input class="form-control" id="weight" name="weight" type="number" placeholder="Peso (kg)" value="{{ crud_user.userdata.weight }}" required/>
+                        <label for="weight">Peso (kg)</label>
+                      </div>
+                      <div class="form-floating mb-3">
+                        <input class="form-control" id="height" name="height" type="number" placeholder="Altura (cm)" value="{{ crud_user.userdata.height }}" required/>
+                        <label for="height">Altura (cm)</label>
+                      </div>
+                      <div class="form-floating mb-3">
+                        <select class="form-control" id="activity" name="activity" type="number" placeholder="Nivel de actividad" required>
+                          <option value="1.2">Nula</option>
+                          <option value="1.375">Ligera</option>
+                          <option value="1.55">Moderada</option>
+                          <option value="1.725">Intensa</option>
+                          <option value="1.9">Extrema</option>
+                        </select>
+                        <label for="activity">Nivel de actividad</label>
+                        <script>(()=>{document.getElementById("activity").value = "{{ crud_user.userdata.activity }}"})()</script>
+                      </div>
+                      <!-- Phone number input -->
+                      <div class="form-floating mb-3">
+                        <input class="form-control" id="phone" name="phone" type="tel" placeholder="123 45 67 89" value="{{ crud_user.userdata.phone }}" required/>
+                        <label for="phone">Numero de teléfono</label>
+                      </div>
+{% if not update %}
+                      <!-- Email address input -->
+                      <div class="form-floating mb-3">
+                          <input class="form-control" id="username" name="username" type="email" placeholder="Dirección de correo" value="{{ crud_user.username }}" required/>
+                          <label for="username">Dirección de correo</label>
+                      </div>
+                      <!-- Visible password input -->
+                      <div class="form-floating mb-3">
+                          <input class="form-control" id="password" name="password" type="text" placeholder="Contraseña" value="" required/>
+                          <label for="password">Contraseña</label>
+                      </div>
+                      <!-- Error container -->
+                      <p id="errorContainer" class="visually-hidden" ></p>
+                      <!-- Submit Button -->
+                      <div class="d-grid">
+                        <button 
+                          class="btn btn-primary btn-lg" 
+                          id="submitButton"
+                          type="submit">
+                            Dar de alta
+                        </button>
+                      </div>
+{% else %}
+                      <!-- Submit Button -->
+                      <div class="d-grid">
+                        <button 
+                          class="btn btn-primary btn-lg" 
+                          id="submitButton"
+                          type="submit">
+                            Actualizar
+                        </button>
+                      </div>
+{% endif %}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    ; (() => {
+        'use strict'
+        const form = document.getElementById('mainForm')
+        if (!form) return
+
+        form.addEventListener('submit', (event) => {
+                if (form.checkValidity()) {
+                    // trigger custom event hx-trigger="bs-send"
+                    htmx.trigger(form, "bsSend");
+                }
+                event.preventDefault()
+                event.stopPropagation()
+                
+                form.classList.add('was-validated')
+            },false)
+    })()
+</script>
+{% endblock %}
