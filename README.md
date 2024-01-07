@@ -171,7 +171,6 @@ Los criterios se validarán junto al usuario en pruebas de funcionalidad.
       - altura
       - correo
       - nivel de actividad
-      - formula de calorías personalizada
     - Poder dar de baja a clientes
     - Poder modificar los datos de los clientes
 
@@ -464,10 +463,13 @@ url: /nutricionist
 NutriBalance               Home Quienes Somos Contacto    Bob v 
 -------------------------------------------------------------------
 
+Clientes: 
 [*desplegable clientes*]
 |----------------------|
 | Alice Martinez       |
 +----------------------+
+
+[Dar de alta nuevo cliente]
 
 -------------------------------------------------------------------
 Copyright © Diego Sanz - 2023   GitHub · Privacy · Terms · Contact
@@ -638,6 +640,7 @@ Copyright © Diego Sanz - 2023   GitHub · Privacy · Terms · Contact
 - Mockups profile y nutricionist a plantillas
 
 4/1/24
+
 - Mockup diet a plantilla con paginación
 - Reunion meet
 - Redactar:
@@ -649,6 +652,7 @@ Copyright © Diego Sanz - 2023   GitHub · Privacy · Terms · Contact
 - Ordenar el README con formato memoria
 
 5/1/24
+
 - Redactar:
   - i18n y l10n
   - Plantilla
@@ -659,6 +663,13 @@ Copyright © Diego Sanz - 2023   GitHub · Privacy · Terms · Contact
 6/1/24
 
 - Reorganizar las iteraciones y los requisitos
+
+7/1/24
+
+- Crear modelo UserData
+- Implementar página de crear y modificar clientes
+- Actualizar página del perfil/id para modificar, eliminar y desactivar clientes
+
 
 to do:
 - CRUD Usuarios
