@@ -47,6 +47,17 @@
                 class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            {% if debug %}
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="navbarDropdownDebug" href="#" role="button"
+              data-bs-toggle="dropdown">Debug</a>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownDebug">
+                <li><a class="dropdown-item" hx-boost="false" href="/admin">Admin</a></li>
+                <li><a class="dropdown-item" href="{% url 'nutricionist' %}">Nutricionist</a></li>
+                <li><a class="dropdown-item" href="{% url 'profile' %}">Profile</a></li>
+                <li><a class="dropdown-item" href="{% url 'diet' %}">Diet</a></li>
+              </ul>
+            {% endif %}
             <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">{% trans 'Quienes Somos' %}</a></li>
             <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">{% trans 'Contacto' %}</a></li>
