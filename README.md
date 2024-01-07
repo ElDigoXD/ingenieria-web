@@ -656,6 +656,10 @@ Copyright © Diego Sanz - 2023   GitHub · Privacy · Terms · Contact
   - Validación de formularios
   - Usuarios y roles
 
+6/1/24
+
+- Reorganizar las iteraciones y los requisitos
+
 to do:
 - CRUD Usuarios
 - Refactorizar urls.py
