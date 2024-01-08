@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.models import User
 
-from .models import UserData
+from .models import Tracking, UserData
 
 
 # Define an inline admin descriptor for Employee model
@@ -21,4 +21,4 @@ class UserAdmin(BaseUserAdmin):
 # Re-register UserAdmin
 admin.site.unregister(User)
 admin.site.register(User, UserAdmin)
-print("registered")
+admin.site.register(Tracking)

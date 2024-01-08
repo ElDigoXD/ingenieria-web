@@ -4,7 +4,7 @@
         let chart = new Chart('{{ chart.canvas_id }}', {
             type: "{{ chart.type }}",
             data: {
-                labels: {{ chart.x_labels }},
+                labels: {{ chart.x_labels|safe }},
                 datasets: [
                     {% for dataset in chart.datasets %}
                         {
@@ -12,7 +12,8 @@
                             backgroundColor: "{{ dataset.background_color }}",
                             borderColor: "{{ dataset.border_color }}",
                             data: {{ dataset.data }},
-                            yAxisID: "{{ dataset.y_axis_id }}"
+                            yAxisID: "{{ dataset.y_axis_id }}",
+                            spanGaps: true
                         },
                     {% endfor %}
                 ]

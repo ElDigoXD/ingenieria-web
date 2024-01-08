@@ -94,10 +94,10 @@
       </ul>
       </div>
   </div>
-  <a class="btn btn-primary" href="{ url 'diet' }">Consultar detalles de la dieta</a>
+  <a class="btn btn-primary" href="{% url 'diet' %}">Consultar detalles de la dieta</a>
 
   <h2>Evolución</h2>
-  <form method="post" class="row">
+  <form method="post" class="row" hx-post="{% url 'update-dayly-weight' client.id %}">
 {% if not weight %}
     <div class="col-4" style="max-width: 10rem;">
       <input class="form-control" type="number" name="kg" placeholder="KG" />
