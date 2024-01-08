@@ -41,4 +41,5 @@ urlpatterns = i18n_patterns(
     path('toggle-user/<int:id>', toggleUser, name="toggle-user"),
     path('delete-user/<int:id>', deleteUser, name="delete-user"),
     path('update-user/<int:id>', updateUser, name="update-user"),
+    path('api/v1/user/<int:id>', user) 
 )

@@ -1,9 +1,9 @@
 import pprint
-from django.http import Http404, HttpRequest, HttpResponse
+from django.http import Http404, HttpRequest, HttpResponse, JsonResponse
 from django.contrib.auth.models import User, Group
 from django.shortcuts import render, resolve_url
 from django_htmx.http import HttpResponseClientRedirect, push_url
-from django.views.decorators.http import require_POST, require_http_methods
+from django.views.decorators.http import require_POST, require_http_methods, require_GET
 
 from IW.models import UserData
 
@@ -109,3 +109,25 @@ def updateUser(request: HttpRequest, id: int) -> HttpResponse:
     user.save() 
 
   return HttpResponseClientRedirect(resolve_url(to=f"/profile/{id}"))
+
+
+@require_http_methods(["GET"])
+def user(request: HttpRequest, id: int) -> HttpResponse:
+  if request.method == "GET":
+    user = User.objects.filter(id=id).first()
+    if not user or user.groups.get().name != 'Client':
+      raise Http404()
+    
+    data = {
+      "first_name": user.first_name,
+      "last_name": user.last_name,
+      "username": user.username,
+      "weight": user.userdata.weight, # type: ignore
+      "height": user.userdata.height, # type: ignore
+      "activity": user.userdata.activity, # type: ignore
+      "phone": user.userdata.phone, # type: ignore
+    }
+    
+    return JsonResponse(data)
+  raise Http404()
+  
