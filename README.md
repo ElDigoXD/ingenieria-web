@@ -675,15 +675,15 @@ Copyright c Diego Sanz - 2023   GitHub . Privacy . Terms . Contact
 - Implementar página de crear y modificar clientes
 - Actualizar página del perfil/id para modificar, eliminar y desactivar clientes
 
+8/1/24
 
-to do:
-- CRUD Usuarios
-- Refactorizar urls.py
-- Acercarse más a la plantilla
-- arreglar formulario de contacto
-
-calculo de comidas:
-- Seleccionar platos aceptados 
-- Catalogar alimentos aceptados 
-- Mostrar calorías objetivo en cal y tipo en %
-- Boton de cambiar alimento / comida
+- Preparar la memoria para la entrega
+- Añadir diagrama de cliente-servidor
+- Añadir arbol de contenidos
+- Api rest (get usuario)
+- Redactar 
+  - Api rest
+  - Gráficos
+  - Conclusiones
+  - Donde encontrar la app
+- Implementar seguimiento de peso (modelo tracking)
