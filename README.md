@@ -1,3 +1,32 @@
+---
+version: "1"
+title: Ingeniería Web
+subtitle: Proyecto nutricionista
+author: Diego Sanz Fuertes | 825015
+date: 8 de enero de 2024
+toc: true
+toc-own-page: true
+lang: es-ES
+table-use-row-colors: false
+listings: true
+template: eisvogel
+output: output.pdf
+listings-disable-line-numbers: true
+titlepage: true
+variables:
+  float-placement-figure: H
+
+output:
+  pdf:
+    template: eisvogel
+    output: output.pdf
+    from: markdown
+    listings: true
+    citeproc: true
+    
+#cp /mnt/c/Users/Diego/ingenieria-web/README.md /mnt/c/Users/Diego/ingenieria-web/*.png . && docker run --rm --volume "`pwd`:/data" --user "root" pandoc/extra README.md -o pdf.pdf -N --template="eisvogel" --listings && cp pdf.pdf /mnt/c/Users/Diego/ingenieria-web/
+...
+
 # Índice
 - [Introducción, Motivación y Objetivos](#introducción-motivación-y-objetivos) 
 - [Estado del arte](#estado-del-arte)
@@ -18,30 +47,6 @@
 - [Anexo: Mockups](#anexo-mockups)
 - [Anexo: Historial](#anexo-historial)
 
----
-
-Tareas por hacer
-
-- [x] Revisar historias
-- [x] Crear iteraciones
-- [x] Numerar las historias
-- [x] Indicar las historias / requisitos funcionales en las iteraciones
-- [ ] Listar los requisitos no funcionales en limpio
-- [ ] ---
-- [x] Permitir conexiones 0.0.0.0
-- [x] Añadir admin a static
-- [ ] Apache https
-- [ ] ---
-- [x] Redactar Introducción, Motivación y Objetivos
-- [x] Buscar el estado del arte
-- [x] Definir arquitectura
-- [x] Mapa del sitio web (arbol)
-- [x] Despliegue en VM
-- [ ] Conclusiones
-- [ ] Bibliografía
-
----
-
 # Introducción, Motivación y Objetivos 
 
 Debido a la importancia de las aplicaciones web en el ámbito del desarrollo de software, permitiendo ser accedidas desde la mayoría de dispositivos, en este proyecto se pretende crear una aplicación web utilizando las principales tecnologías front end (HTML, CSS y JS) y un framework en el backend (Django).
@@ -51,6 +56,8 @@ Esta práctica se motiva por la necesidad de aprender a diseñar un proyecto web
 Los objetivos de este proyecto son:
 - Realizar un análisis de requisitos y definir iteraciones
 - Crear una aplicación web responsive siguiendo las iteraciones
+
+La aplicación web se encuentra desplegada en http://155.210.71.122/es/ y el código fuente, incluyendo esta memoria, se encuentra disponible alojada en https://github.com/ElDigoXD/ingenieria-web , donde se puede consultar el historial de cambios.
 
 # Estado del arte
 
@@ -63,11 +70,14 @@ En este proyecto se propone una aplicación web como apoyo a las sesiones presen
 La propuesta se basa en la proporcionada por los profesores sobre un sistema de nutrición.
 
 Se toman las siguientes consideraciones respecto a la propuesta proporcionada:
+
 - Las consultas de los clientes con el nutricionista son presenciales.
 - El objetivo del sistema es realizar un seguimiento de los clientes y generar dietas para ellos, las cuales podrán consultar.
 - Los alimentos proporcionados se encuentran normalizados, es decir, todas las medidas se realizan sobre 100g, por lo que se tendrán que crear platos o raciones.
 
 # Arquitectura propuesta
+
+![Diagrama cliente servidor](Diagrama_cliente_servidor.png)
 
 La arquitectura propuesta se basa en una arquitectura web cliente-servidor, en la que el cliente se comunica con el servidor mediante HTTP.
 
@@ -82,29 +92,9 @@ El servidor (o backend) se desarrollará mediante el framework [Django](https://
 
 El cliente (o frontend) se desarrollará mediante las plantillas ofrecidas por Django, las cuales extienden y generan HTML. Se utilizará CSS para los estilos con la ayuda de la popular librería [Bootstrap](https://getbootstrap.com/), la cuál reduce la necesidad de escribir hojas de estilos gracias a las clases predefinidas que incluye. Por último se utilizará JavaScript para ofrecer una interfaz más dinámica y algunas librerías como una extensión para algunas funcionalidades de Bootstrap, [Chart.js](https://www.chartjs.org/) para la creación de gráficos y [htmx](https://htmx.org). Esta última librería permite, principalmente, sustituir partes de la pagina web por HTML ofrecido por el servidor. 
 
-> Posible diagrama de frontend <--> backend como el de SATD.
-
 # Arquitectura de contenidos
 
-Todos los usuarios:
-
-- Home -> Quienes somos
-- Home -> Contacto
-- Home -> Iniciar Sesión
-
-Usuario registrado (cliente):
-
-- Iniciar Sesión -> Perfil
-- Iniciar Sesión -> Perfil -> Cerrar sesión (home)
-- Iniciar Sesión -> Perfil -> Dieta
-
-Usuario administrador (dietista):
-
-- Iniciar Sesión -> Nutricionista
-- Iniciar Sesión -> Nutricionista -> Perfil cliente
-- Iniciar Sesión -> Nutricionista -> Perfil cliente -> Dietas cliente
-
-> Iniciar Sesión -> Nutricionista -> CRUD Cliente 
+![Árbol de contenidos](Arbol_contenidos.png)
 
 # Ingeniería de requisitos
 
@@ -222,7 +212,7 @@ Implementar CRUD de los usuarios (nutricionista)
 - Historias: 6
 - Implementar página de gestión de usuarios con posibilidad de CRUD
 
-### Iteración 4 (Revisable)
+### Iteración 4
 
 Implementar seguimiento del cliente (cliente y nutricionista) 
 
@@ -255,7 +245,6 @@ Generar 5 comidas basadas en la dieta.
 - Historias: 7
 - Generar alimentos
 
----
 
 Requisitos en sucio:
 
@@ -278,7 +267,6 @@ Requisitos en sucio:
 - calcular calorías necesarias
 - variar formulas calorías
 
----
 
 # Detalles de la implementación
 
@@ -322,16 +310,34 @@ Algunas de las utilidades ofrecidas son:
 
 ## Gráficos
 
+Los gráficos se han generado a través de la librería [Chart.js](https://chartjs.org) y se ha utilizado un wrapper para python y Django propio, creado para otro proyecto.
+
+## API REST
+
+Para crear una API REST se ha creado la ruta estandar "/api/v1/" en la que se puede acceder al objeto "user" mediante get y, si existe, se reciben sus datos en formato JSON. Estas peticiones podrían contar con más seguridad mediante el uso de autenticación del cliente mediante tokens o contraseñas.
+
+También existe una extensión para django centrada en realizar APIs REST llamada django-rest-framework pero no se ha considerado necesario su uso en esta aplicación web.
+
+
+# Conclusiones
+
+Tras la dedicación de innumerables horas a este proyecto, se han llegado a las siguientes conclusiones:
+
+- Los frameworks facilitan mucho el desarrollo, aun así, requieren de tiempo para adquirir conocimientos propios y de las tecnologías que abstraen, por ejemplo, para utilizar las plantillas de django, es necesario saber HTML y para utilizar bootstrap es necesario conocer como funciona CSS.
+- La creación del backend ha sido mas interesante que la del frontend, ha llegado a resultar tediosa. Quizás utilizar otra librería de plantillas y estilos o crear componentes hace que resulte mas interesante.
+- Las iteraciones definidas en un primer momento no eran acertadas por falta de experiencia. Aun así han ayudado a avanzar el proyecto considerablemente
+
+
 # Referencias
 
-- [Django](https://www.djangoproject.com/)
-- [htmx](https://htmx.org/)
-- [Extensión django-htmx](https://django-htmx.readthedocs.io/)
-- [Extensión django-debug-toolbar](https://django-debug-toolbar.readthedocs.io/)
-- [Bootstrap](https://getbootstrap.com/)
-- [Plantilla por Start Bootstrap](https://startbootstrap.com/template/modern-business)
-- [Generador de personas](https://thispersondoesnotexist.com/)
-
+- Django - https://www.djangoproject.com/
+- htmx - https://htmx.org/
+- Extensión django-htmx - https://django-htmx.readthedocs.io/
+- Extensión django-debug-toolbar - https://django-debug-toolbar.readthedocs.io/
+- Bootstrap - https://getbootstrap.com/
+- Plantilla por Start Bootstrap - https://startbootstrap.com/template/modern-business/
+- Chart.js - https://chartjs.org
+- Generador de personas - https://thispersondoesnotexist.com/
 
 # Anexo: Instalación
 
@@ -410,7 +416,7 @@ kg
 +----------------------------------- dia
 
 -------------------------------------------------------------------
-Copyright © Diego Sanz - 2023   GitHub · Privacy · Terms · Contact
+Copyright c Diego Sanz - 2023   GitHub . Privacy . Terms . Contact
 -------------------------------------------------------------------
 ```
 
@@ -448,7 +454,7 @@ grasas: 12g
 
 
 -------------------------------------------------------------------
-Copyright © Diego Sanz - 2023   GitHub · Privacy · Terms · Contact
+Copyright c Diego Sanz - 2023   GitHub . Privacy . Terms . Contact
 -------------------------------------------------------------------
 ```
 
@@ -472,7 +478,7 @@ Clientes:
 [Dar de alta nuevo cliente]
 
 -------------------------------------------------------------------
-Copyright © Diego Sanz - 2023   GitHub · Privacy · Terms · Contact
+Copyright c Diego Sanz - 2023   GitHub . Privacy . Terms . Contact
 -------------------------------------------------------------------
 ```
 
@@ -518,7 +524,7 @@ kg
 
 
 -------------------------------------------------------------------
-Copyright © Diego Sanz - 2023   GitHub · Privacy · Terms · Contact
+Copyright c Diego Sanz - 2023   GitHub . Privacy . Terms . Contact
 -------------------------------------------------------------------
 ```
 
@@ -571,11 +577,10 @@ grasas: 12g
 
 
 -------------------------------------------------------------------
-Copyright © Diego Sanz - 2023   GitHub · Privacy · Terms · Contact
+Copyright c Diego Sanz - 2023   GitHub . Privacy . Terms . Contact
 -------------------------------------------------------------------
 ```
 
----
 
 # Anexo: Historial
 
