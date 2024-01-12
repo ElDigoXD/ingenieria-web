@@ -8,8 +8,17 @@
 
 {% block main %}
 <!-- Page content -->
+
+
+
 <section class="py-5">
     <div class="container px-5">
+{% if update %}
+    <a href="{% url 'profile' crud_user.id %}">&lt; Volver</a>
+{% else %}
+    <a href="{% url 'nutricionist' %}">&lt; Volver</a>
+{% endif %}
+
         <!-- Contact form -->
         <div id="form_container" class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
             <div class="text-center mb-5">

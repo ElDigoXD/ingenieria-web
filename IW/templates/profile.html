@@ -13,7 +13,12 @@
 
 {% block main %}
 
+
 <div class="m-5">
+{% if nutricionist %}
+  <a href="{% url 'nutricionist' %}">&lt; Volver</a>
+{% endif %}
+
   <h1>{{ client.first_name }} {{ client.last_name}}</h1>
 {% if nutricionist %}
   <button 
