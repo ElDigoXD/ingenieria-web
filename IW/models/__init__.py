@@ -31,6 +31,20 @@ class Food(models.Model):
   def __str__(self):
     return self.name
 
+  def __dict__(self):
+    return {
+        "id": self.id, # type: ignore
+        "food_type": self.food_type.capitalize(),
+        "name": self.name.capitalize(),
+        "calories": self.calories,
+        "protein": self.protein,
+        "carbohydrates": self.carbohydrates,
+        "fat": self.fat,
+        "g_per_ration": self.g_per_ration,
+        "notes": self.notes.capitalize(),
+    }
+
+
 class FoodForm(ModelForm):
   class Meta:
     model = Food

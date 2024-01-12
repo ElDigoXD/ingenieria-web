@@ -10,24 +10,22 @@
 
 <section class="py-5">
   <div class="container px-5">
-      <!-- Contact form -->
-      <div id="form_container" class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
-
-
-  <h1>Clientes</h1>
-  <div class="my-3 col-auto">
-  <select class="form-select col-auto" name="client" hx-post="{% url 'profile' %}" hx-swap="none">
-    <option selected disabled hidden>Seleccione un cliente...</option>
+    <div id="form_container" class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
+      <div class="mb-3 col-auto">
+        <h1>Clientes</h1>
+        <select class="form-select col-auto" name="client" hx-post="{% url 'profile' %}" hx-swap="none">
+          <option selected disabled hidden>Seleccione un cliente...</option>
 {% for client in clients %}
-  <option value="{{ client.id }}">{{client.first_name}} {{client.lastname}}</option>
+          <option value="{{ client.id }}">{{client.first_name}} {{client.lastname}}</option>
 {% endfor %}
-  </select>
+        </select>
+      </div>
+      <a href="{% url 'create-user' %}" class="btn btn-primary">Dar de alta nuevo cliente</a>
+      <div class="my-3 col-auto">
+        <h1>Alimentos</h1>
+        <a hx-boost="false" href="{% url 'food' %}" class="btn btn-primary">Consultar alimentos</a>
+      </div>
+    </div>
   </div>
-  <a 
-    href="{% url 'create-user' %}" 
-    class="btn btn-primary">Dar de alta nuevo cliente</a>
-</div>
-
-</div>
 </section>
 {% endblock main %}

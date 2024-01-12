@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.contrib.auth import logout
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect
 from django.urls import include, path
 from django.conf.urls.i18n import i18n_patterns
 
@@ -44,5 +44,8 @@ urlpatterns = i18n_patterns(
     path('delete-user/<int:id>', deleteUser, name="delete-user"),
     path('update-user/<int:id>', updateUser, name="update-user"),
     path('add-food', addFood, name="add-food"),
-    path('api/v1/user/<int:id>', user) 
+    path('food', foodTable, name="food"),
+    path('api/v1/user', user, name="user-api") ,
+    path('api/v1/user/<int:id>', user_id, name="user-api-id"),
+    path('api/v1/food', food, name="food-api"),
 )

@@ -687,3 +687,12 @@ Copyright c Diego Sanz - 2023   GitHub . Privacy . Terms . Contact
   - Conclusiones
   - Donde encontrar la app
 - Implementar seguimiento de peso (modelo tracking)
+
+12/1/24
+
+- Implementar link de volver atrás
+- Importar los alimentos en la BBDD (modelo food)
+- Añadir librería js bootstrap-table
+- Añadir paginación a la api rest de los alimentos
+- Aádir pagina alimentos
+

@@ -90,9 +90,9 @@ def updateUser(request: HttpRequest, id: int) -> HttpResponse:
   if request.method == "GET":
     context = {
         "crud_user": user,
-        "update": True, 
+        "update": True,
     }
-    
+
     return render(request, "user-crud.html", context)
 
   if request.POST:
@@ -105,29 +105,48 @@ def updateUser(request: HttpRequest, id: int) -> HttpResponse:
     user.userdata.activity = form["activity"]  # type: ignore
     user.userdata.phone = form["phone"]  # type: ignore
     print(form)
-    user.userdata.save() # type: ignore
-    user.save() 
+    user.userdata.save()  # type: ignore
+    user.save()
 
   return HttpResponseClientRedirect(resolve_url(to=f"/profile/{id}"))
 
 
 @require_http_methods(["GET"])
-def user(request: HttpRequest, id: int) -> HttpResponse:
+def user(request: HttpRequest) -> HttpResponse:
+  if request.method == "GET":
+
+    user = User.objects.filter()[2]
+
+    data = {
+        "first_name": user.first_name,
+        "last_name": user.last_name,
+        "username": user.username,
+        "weight": user.userdata.weight,  # type: ignore
+        "height": user.userdata.height,  # type: ignore
+        "activity": user.userdata.activity,  # type: ignore
+        "phone": user.userdata.phone,  # type: ignore
+    }
+
+    return JsonResponse(data)
+  raise Http404()
+
+
+@require_http_methods(["GET"])
+def user_id(request: HttpRequest, id: int) -> HttpResponse:
   if request.method == "GET":
     user = User.objects.filter(id=id).first()
     if not user or user.groups.get().name != 'Client':
       raise Http404()
-    
+
     data = {
-      "first_name": user.first_name,
-      "last_name": user.last_name,
-      "username": user.username,
-      "weight": user.userdata.weight, # type: ignore
-      "height": user.userdata.height, # type: ignore
-      "activity": user.userdata.activity, # type: ignore
-      "phone": user.userdata.phone, # type: ignore
+        "first_name": user.first_name,
+        "last_name": user.last_name,
+        "username": user.username,
+        "weight": user.userdata.weight,  # type: ignore
+        "height": user.userdata.height,  # type: ignore
+        "activity": user.userdata.activity,  # type: ignore
+        "phone": user.userdata.phone,  # type: ignore
     }
-    
+
     return JsonResponse(data)
   raise Http404()
-  

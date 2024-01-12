@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}
+{% trans "Alimentos" %}
+{% endblock %}
+
+{% block main %}
+<!-- Page content -->
+<section class="py-5">
+  <div class="container px-5">
+    <a href="{% url 'nutricionist' %}" >&lt; Volver</a>
+    <h1>Alimentos</h1>
+    <table
+    id="table"
+    {% get_current_language as LANGUAGE_CODE %}
+    data-locale="{{ LANGUAGE_CODE }}"
+    data-toggle="table"
+    data-height="600"
+    data-url="{% url 'food-api' %}"
+    data-search="true"
+    data-show-columns="true"
+    data-side-pagination="server"
+    data-pagination-parts="['pageInfo', 'pageSize', 'pageList']"
+    data-pagination="true"
+    data-show-fullscreen="true"
+    data-show-export="true"
+    >
+    
+    <thead>
+      <tr>
+        <th data-field="food_type"     data-sortable="true"                        >Tipo</th>
+        <th data-field="name"          data-sortable="true" data-switchable="false">Nombre</th>
+        <th data-field="calories"      data-sortable="true"                        >Calorías</th>
+        <th data-field="protein"       data-sortable="true"                        >Proteínas</th>
+        <th data-field="carbohydrates" data-sortable="true"                        >Hidratos</th>
+        <th data-field="fat"           data-sortable="true"                        >Grasas</th>
+        <th data-field="g_per_ration"  data-sortable="true"  data-visible="false"  >g por ración</th>
+        <th data-field="notes"                                                     >Notas</th>
+        <th data-field="id"            data-sortable="true"  data-visible="false"  >ID</th>
+      </tr>
+    </thead>
+  </table>
+
+  </div>
+</section>
+<!-- BS tables -->
+<script>
+
+</script>
+{% endblock %}
