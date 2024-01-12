@@ -1,0 +1,310 @@
+HUEVOS,clara,53,11.1,0.7,0.2,0,clara 42GR (70% HUEVO)
+HUEVOS,cocido,147,12.3,0,10.9,0,cocido 60 GR
+HUEVOS,entero,160,12.9,0.7,11.2,0,entero
+HUEVOS,frito,232,14.1,0,19.5,0,frito
+HUEVOS,tortilla,190,10.6,0,16.4,0,tortilla
+HUEVOS,yema,359,16.1,0.3,31.9,0,yema 18GR (30%HUEVO)
+LECHES,Leche condensada,320,8.2,51.9,8.8,0,Leche condensada
+LECHES,Leche cabra,68,3.7,4.3,3.9,0,Leche cabra
+LECHES,Oveja,96,5.3,4.7,6.3,0,Oveja
+LECHES,Vaca Desnatada,35,3.5,4.8,0.1,0,Vaca Desnatada
+LECHES,soja,43,3.1,3.7,1.7,0,soja
+LECHES,Vaca semi,48,3.4,4.8,1.6,0,Vaca semi
+LECHES,Vaca entera,65,3.3,4.8,3.6,0,Vaca entera
+LECHES,Polvo desnatada,366,35,51.9,1,0,Polvo desnatada
+LECHES,Polvo entera,490,25.2,38.1,26.2,0,Polvo entera
+LECHES,Nata para montar,302,2.4,3.4,31.7,0,Nata para montar
+Yogur,frutas desnatado,69,3.8,12.8,0.1,0,frutas desnatado
+Yogur,Frutas entero,102,3.9,15.5,2.6,0,Frutas entero
+Yogur,bifidus con cereales y fibra,73,2.6,10.8,1.9,0,bifidus con cereales y fibra
+Yogur,bifidus con frutas,90,3.4,16,1.4,0,bifidus con frutas
+Yogur,danonino,100,6.1,13.7,2,0,danonino (81.5 gr unid)
+Yogur,Desnatado,39,4.4,4.9,0.1,0,Desnatado
+Yogur,Cuajada,75,4.5,1.4,4.5,0,Cuajada
+Yogur,Natural,69,3.8,4.9,3.8,0,Natural
+QUESOS,Azul,364,20.6,2,31.3,0,Azul
+QUESOS,Brie,342,22.6,1,27.9,0,Brie
+QUESOS,Cammembert,286,21,0.2,22.3,0,Cammembert
+QUESOS,Castellano manchego,438,25.5,0.9,37.3,0,Castellano manchego
+QUESOS,Bola,331,23.6,2,26.3,0,Bola
+QUESOS,gouda,330,25,0,25,0,gouda
+QUESOS,Cabra fresco,270,17.4,1.1,21.8,0,Cabra fresco
+QUESOS,Cabrales,379,21.5,2.1,32.6,0,Cabrales
+QUESOS,Emmental,385,28.7,0.5,29.7,0,Emmental
+QUESOS,Lonchas,148,10.8,0.7,11.3,0,Lonchas
+QUESOS,Fresco,47,7.5,3.9,0.2,0,Fresco
+QUESOS,Fresco Burgos,286,16,3.6,24,0,Fresco Burgos
+QUESOS,Fresco desnatado,76,13.5,4,0.3,0,Fresco desnatado
+QUESOS,Fresco graso,161,11.1,3.3,11.4,0,Fresco graso
+QUESOS,Gallego,330,19.4,0,28,0,Gallego
+QUESOS,Gruyere,414,25.8,0.9,32.3,0,Gruyere
+QUESOS,Idiazabal,434,23.3,0,37.8,0,Idiazabal
+QUESOS,mozarela,233,19.9,2.2,16.1,0,mozarela
+QUESOS,Manchego,395,23,0.9,33.6,0,Manchego
+QUESOS,Manchego en aceite,457,26.5,0.5,38.8,0,Manchego en aceite
+QUESOS,Parmesano,379,35.6,0.1,25.8,0,Parmesano
+QUESOS,Roquefort,361,21.5,0.2,30.6,0,Roquefort
+QUESOS,Zamorano,428,25.3,0.9,36.3,0,Zamorano
+QUESOS,Requeso,75,9.9,2.3,7.3,0,Requeson
+HELADOS OTROS LACTEOS,Crema chocolate chamburcy,131,2.9,20.6,4.1,0,Crema chocolate chamburcy
+HELADOS OTROS LACTEOS,Cuajada chamburcy,91,4.9,7.6,4.5,0,Cuajada chamburcy
+HELADOS OTROS LACTEOS,Dalky Chocolate,143,2.3,18.4,6.7,0,Dalky Chocolate
+HELADOS OTROS LACTEOS,Dalky Fresa,141,2.5,18.2,6.5,0,Dalky Fresa
+HELADOS OTROS LACTEOS,Natillas chamburcy,113,2.6,19,2.9,0,Natillas chamburcy
+HELADOS OTROS LACTEOS,Petitsuise 40%MG,141,9.6,3,10.1,0,Petitsuise 40%MG
+HELADOS OTROS LACTEOS,Petitsuise 60%MG,211,8.3,3,18.5,0,Petitsuise 60%MG
+HELADOS OTROS LACTEOS,Petitsuise con frutas,180,6,20,8.5,0,Petitsuise con frutas
+HELADOS OTROS LACTEOS,Helado crocanty camy,247,4.8,27.2,4.2,0,Helado crocanty camy
+HELADOS OTROS LACTEOS,Helado bloque Nata chocolate camy,158,3.6,23.6,5.5,0,Helado bloque Nata chocolate camy
+HELADOS OTROS LACTEOS,Cornete camychoc,247,3.6,33.1,11.1,0,Cornete camychoc
+HELADOS OTROS LACTEOS,Cornete Moca,2.3,3.9,31.9,9.7,0,Cornete Moca
+HELADOS OTROS LACTEOS,Helado tarta wisky,219,3.5,35.4,7,0,Helado tarta wisky
+HELADOS OTROS LACTEOS,Tarta jijona,236,4.4,27.7,12,0,Tarta jijona
+CARNE DE CERDO,Magro,142,21.5,0,6.3,0,Magro
+CARNE DE CERDO,Filetes,190,19.3,0,11.9,0,Filetes
+CARNE DE CERDO,Jamon cocido graso,207,21.4,0,12.8,0,Jamon cocido graso
+CARNE DE CERDO,Solomillo lomo?¿?¿,198,19,0,13,0,Solomillo lomo?¿?¿
+CARNE DE CERDO,Lacon,287,16.3,0,23.9,0,Lacon
+CARNE DE CERDO,Pierna de cerdo,138,21,0,5.3,0,Pierna de cerdo
+CARNE DE CERDO,Solomillo ,112,21,0,2.5,0,Solomillo 
+CARNE DE CERDO,Oreja,233,22.5,0,15.1,0,Oreja
+CARNE DE VACUNO,Falda magra,133,21,0,4.8,0,Falda magra
+CARNE DE VACUNO,carne picada,207,15.8,0,16,0,carne picada 100 gr
+CARNE DE VACUNO,Filete ternera,98,21.3,0,1.8,0,Filete ternera
+CARNE DE VACUNO,Vaca buey Carne grasa,214,19,0,15.3,0,Vaca buey Carne grasa
+CARNE DE VACUNO,Vaca buey Carne Magra,126,20.9,0,4.7,0,Vaca buey Carne Magra
+CARNE DE VACUNO,Vaca Buey aguja,149,19.3,0,7.4,0,Vaca Buey aguja
+CARNE DE VACUNO,Vaca Buey Babilla,124,21.1,0,3.8,0,Vaca Buey Babilla
+CARNE DE VACUNO,Vaca buey Extra Magra ?¿?,111,22,1.1,1.9,0,Vaca buey Extra Magra ?¿?
+CARNE DE VACUNO,Vaca Buey contra,144,21.9,0,5.6,0,Vaca Buey contra
+CARNE DE VACUNO,Vaca buey falda,247,19.9,0,18,0,Vaca buey falda
+CARNE DE VACUNO,Vaca buey Lomo alto,233,18.6,0,17,0,Vaca buey Lomo alto
+CARNE DE VACUNO,Vaca buey Lomo bajo,180,20.6,0,10.2,0,Vaca buey Lomo bajo
+CARNE DE VACUNO,Vaca buey lomo magro alto,160,19.8,0,8.3,0,Vaca buey lomo magro alto
+CARNE DE VACUNO,Vaca buey lomo magro bajo,142,21.5,0,5.5,0,Vaca buey lomo magro bajo
+CARNE DE VACUNO,Vaca buey Morcillo,128,21.8,0,3.9,0,Vaca buey Morcillo
+CARNE DE VACUNO,Vaca buey Redondo,132,21.8,0,4.3,0,Vaca buey Redondo
+CARNE DE VACUNO,Vaca buey Solomillo,160,20.8,0,7.9,0,Vaca buey Solomillo
+CARNE DE VACUNO,Vaca buey Tapa,127,22.8,0,3.3,0,Vaca buey Tapa
+CARNE DE OVINO,Cordero carne grasa,364,13.5,0,34.5,0,Cordero carne grasa
+CARNE DE OVINO,Cordero carne magra,118,20.4,0,3.4,0,Cordero carne magra
+AVES Y CAZA,avestruz,92,26,0,0.9,0,avestruz
+AVES Y CAZA,Carne de caballo,133,21.4,0,4.6,0,Carne de caballo
+AVES Y CAZA,Ciervo,118,20.6,0,3.3,0,Ciervo
+AVES Y CAZA,Ganso asado,319,29.3,0,22.4,0,Ganso asado
+AVES Y CAZA,Higados de pollo,137,22.1,0,4.7,0,Higados de pollo
+AVES Y CAZA,Jabali,114,19.5,0,3.4,0,Jabali
+AVES Y CAZA,Menudillos de pollo crudo,124,17.9,1.8,4.5,0,Menudillos de pollo crudo
+AVES Y CAZA,Menudillos de pollo fritos,277,32.5,4.4,13.5,0,Menudillos de pollo fritos
+AVES Y CAZA,Mollejas de pollo,118,18.2,0.6,4.2,0,Mollejas de pollo
+AVES Y CAZA,Mollejas de pollo cocidas,153,27.2,1.1,3.7,0,Mollejas de pollo cocidas
+AVES Y CAZA,hamburguesas pavopollo,106,16.6,1.1,4,0,hamburguesas de pavopollo 90gr
+AVES Y CAZA,filetes de pavo,439,25,0,0.5,0,filetes de pavo 80 gr
+AVES Y CAZA,pechuga de pavo adobada,94,16.5,2.5,2,0,pechuga de pavo adobada 47gr
+VISCERAS,Callos ,138,14.8,0,8.3,0,Callos 
+VISCERAS,Higado de ternera,119,19.2,0,4.1,0,Higado de ternera
+VISCERAS,Higado varios animales,123,20.2,0.2,4.6,0,Higado varios animales
+VISCERAS,Riñones de cordero,98,16.5,0,3,0,Riñones de cordero
+VISCERAS,Sangre de cerdo,80,18.5,0.1,0.1,0,Sangre de cerdo
+VISCERAS,Sangre de vaca,77,17.8,0,0.1,0,Sangre de vaca
+VISCERAS,Sesos de cordero,129,10.9,0,9.1,0,Sesos de cordero
+EMBUTIDOS,Cecina,252,39,0,9.5,0,Cecina
+EMBUTIDOS,Chistorra,490,12.7,7,45.7,0,Chistorra
+EMBUTIDOS,Chorizo,380,15.5,5.9,32.7,0,Chorizo
+EMBUTIDOS,Chorizo blanco,322,19.8,0,27,0,Chorizo blanco
+EMBUTIDOS,Chorizo cerdo iberico,512,12.1,7,48.3,0,Chorizo cerdo iberico
+EMBUTIDOS,Chorizo iberico extra ,423,14.6,5.7,37.9,0,Chorizo iberico extra 
+EMBUTIDOS,Chorizo de pamplona,520,15,7.6,47.7,0,Chorizo de pamplona
+EMBUTIDOS,Jamon curado,195,27.8,0.3,8.3,0,Jamon curado
+EMBUTIDOS,Jamon pata negra,357,31.8,0,25.6,0,Jamon pata negra
+EMBUTIDOS,pavo EMBUTIDO,105,24.12,0,0.99,0,pavo 13 gr loncha (dia) 
+EMBUTIDOS,Jamon serrano,136,22,0,5.6,0,Jamon serrano 30gr
+EMBUTIDOS,lacon al horno,147,21.4,1.2,6.8,0,lacon al horno
+EMBUTIDOS,Lomo embuchado,191,29,0.8,8,0,"Lomo embuchado (dia)(7,5gr)"
+EMBUTIDOS,Morcon,399,25,0,33.2,0,Morcon
+EMBUTIDOS,Salchichon,376,26.7,0,30,0,Salchichon
+EMBUTIDOS,Salchicho extra,407,19.8,6.6,33.5,0,Salchicho extra
+PRODUCTOS CARNICOS,Butifarra catalana,249,17.7,0.4,19.6,0,Butifarra catalana
+PRODUCTOS CARNICOS,Cabeza de jabali/cerdo,335,21.5,0,27.7,0,Cabeza de jabali/cerdo
+PRODUCTOS CARNICOS,Chicharron,445,36.5,0,33.2,0,Chicharron
+PRODUCTOS CARNICOS,Jamon cocido extra,114,18.6,1.8,3.6,0,Jamon cocido extra
+PRODUCTOS CARNICOS,Jamon york,207,21.4,0,12.8,0,Jamon york
+PRODUCTOS CARNICOS,Morcilla de arroz,390,4,11.5,36.5,0,Morcilla de arroz
+PRODUCTOS CARNICOS,Morcilla de cebolla,473,8.7,16.6,41.4,0,Morcilla de cebolla
+PRODUCTOS CARNICOS,Mortadela,349,12.4,0,32.8,0,Mortadela
+PRODUCTOS CARNICOS,Foigras,319,14.2,0,28.6,0,Foigras
+PRODUCTOS CARNICOS,Salami,525,17.8,0,49.7,0,Salami
+PRODUCTOS CARNICOS,Salchicha frankfur,257,12.9,6.8,19.5,0,Salchi. frankfur 25gr peq-45gr grand
+PRODUCTOS CARNICOS,frankfurt vaca,322,11.3,2.4,29.4,0,frankfurt vaca
+PRODUCTOS CARNICOS,Salchichas frankfurt ligh,125,15,0.4,7.1,0,Salchichas frankfurt ligh
+PRODUCTOS CARNICOS,Sobrasada,574,15.8,3.4,25.2,0,Sobrasada
+PESCADOS BAJOS EN GRASA,Bacalao en salazon,290,62.8,0,2.4,0,Bacalao en salazon
+PESCADOS BAJOS EN GRASA,congrio,123,19,1.4,4.6,0,congrio
+PESCADOS BAJOS EN GRASA,Bacalao fresco,79,17.7,0,0.4,0,Bacalao fresco
+PESCADOS BAJOS EN GRASA,Gallo,73,16,0,1,0,Gallo
+PESCADOS BAJOS EN GRASA,Lenguado,87,17.5,0,1.4,0,Lenguado
+PESCADOS BAJOS EN GRASA,Merluza,81,17.2,0,0.9,0,Merluza
+PESCADOS BAJOS EN GRASA,palometa,125,20,0,5,0,palometa
+PESCADOS BAJOS EN GRASA,Pescado blanco,75,16.9,0,0.8,0,Pescado blanco
+PESCADOS BAJOS EN GRASA,Rape,70,14.9,0,0.7,0,Rape
+PESCADOS BAJOS EN GRASA,rosada,73,16.5,0,0.5,0,rosada
+PESCADOS BAJOS EN GRASA,Raya,99,20.5,0,1.3,0,Raya
+PESCADOS BAJOS EN GRASA,Rodaballo,87,16.7,0,1.7,0,Rodaballo
+PESCADOS SEMIGRASOS,Besugo,155,21.1,0,7.8,0,Besugo 125 gr
+PESCADOS SEMIGRASOS,Cazon,82,18.7,0,0.7,0,Cazon
+PESCADOS SEMIGRASOS,Dorada,141,18,0,16,0,Dorada
+PESCADOS SEMIGRASOS,Lubina,95,19.8,0,1.8,0,Lubina
+PESCADOS SEMIGRASOS,emperador,117,19.35,0,4.4,0,emperador
+PESCADOS SEMIGRASOS,Mero,92,19.4,0,3.5,0,Mero
+PESCADOS SEMIGRASOS,Pez espada,123,19.4,0,4.4,0,Pez espada
+PESCADOS SEMIGRASOS,Salmonete,126,20.4,0,4.3,0,Salmonete
+PESCADOS SEMIGRASOS,Trucha,108,19.5,0,2.7,0,Trucha
+PESCADOS GRASOS,Anchoas en aceite,210,28.9,0,15,0,Anchoas en aceite 3gr
+PESCADOS GRASOS,atun al natural,100,23,0,0.6,0,atun al natural 60 gr lata
+PESCADOS GRASOS,Atun en aceite,290,23.8,0,8.2,0,Atun en aceite 40 GR ESCURRIDO
+PESCADOS GRASOS,Atun fresco,232,21.5,0,15.5,0,Atun fresco
+PESCADOS GRASOS,Boqueron ,107,18,0.5,2.3,0,Boqueron 
+PESCADOS GRASOS,Caballa,156,23.2,0,11.3,0,Caballa
+PESCADOS GRASOS,Salmon ahumado,142,25.4,0,4.5,0,Salmon ahumado
+PESCADOS GRASOS,Sardinas en aceite,228,24.1,0,13.9,0,Sardinas en aceite
+PESCADOS GRASOS,Sardinas en salsa de tomate,177,17.8,0.5,11.6,0,Sardinas en salsa de tomate
+MOLUSCOS,Berberechos cocidos,48,11.3,0,0.3,0,Berberechos cocidos
+MOLUSCOS,Caracoles,77,16,2,1.4,0,Caracoles
+MOLUSCOS,mejillones cocidos dia,89,14.8,3,2,0,mejillones cocidos dia
+MOLUSCOS,Mejillones en escabeche,77,11,2,2.5,0,Mejillones en escabeche
+CRUSTACEOS Y OTROS PRODUCTOS,Sucedaneo caviar,118,14,0,6.5,0,Sucedaneo caviar
+CRUSTACEOS Y OTROS PRODUCTOS,palitos de cangrejo,110,5.5,21,1,0,"palitos de cangrejo 12,5 gr palito"
+CRUSTACEOS Y OTROS PRODUCTOS,gamba pelada,40,8.1,0.9,0.4,0,gamba pelada
+CRUSTACEOS Y OTROS PRODUCTOS,gamba,94,18,1.5,1.8,0,gamba 5 gr pelada
+CRUSTACEOS Y OTROS PRODUCTOS,Gamba blanca,109,24.5,0.9,0.8,0,Gamba blanca 12 gr unidad
+CRUSTACEOS Y OTROS PRODUCTOS,Langostino,108,24.3,0.9,0.8,0,Langostino 25-35gr
+ACEITES,Girasol,882,0,0,99.8,0,Girasol
+ACEITES,Oliva,880,0,0.2,99.6,0,Oliva
+ACEITES,mantequilla,734,0.7,0,83.2,0,mantequilla
+ACEITES,margarina baja en calorias,362,1.6,0.4,40,0,margarina baja en calorias
+ACEITES,margarina vegetal,709,0.2,0.4,80,0,margarina vegetal
+CHOCOLATES,chocolate con leche,511,9.2,54.1,31.5,0,chocolate con leche
+CHOCOLATES,chocolate nestle,530,6.5,58,31.1,0,chocolate nestle
+AZCUARES,azucar,399,0,99.8,0,0,azucar
+FECULAS,pure de patata,353,6.9,79.8,0.7,0,pure de patata
+CEREALES Y DERIVADOS,all-bran,249,15.1,44.9,3.4,0,allbran
+CEREALES Y DERIVADOS,ALLBRAN CHOCO,397,10,64,9,0,ALLBRAN CHOCO
+CEREALES Y DERIVADOS,avena,352,11.72,55.7,7.09,0,avena 1 cuch son 7gr
+CEREALES Y DERIVADOS,croisant,486,7.8,44,30.5,0,croisant 31 gr pequeño
+CEREALES Y DERIVADOS,cereales arroz trigo integral,375,16,74,1,0,cereales arroz y trigo integral
+CEREALES Y DERIVADOS,arroz integral,350,7.25,74.1,2.2,0,arroz integral 30 gr cucharada sopera
+CEREALES Y DERIVADOS,arroz,342,6.8,77.7,0.6,0,arroz 35 gr son 1/4 de taza
+CEREALES Y DERIVADOS,arroz cocido,87,2,19.5,0.2,0,arroz cocido
+CEREALES Y DERIVADOS,bollycao,415,7.7,55.4,11.8,0,bollycao
+CEREALES Y DERIVADOS,bollo de leche,302,9,53,6,0,bollo de leche
+CEREALES Y DERIVADOS,bollo suizo,363,10,42.5,17,0,bollo suizo
+CEREALES Y DERIVADOS,cornflakes,348,7.2,79.7,0.6,0,cornflakes 40 gr son 1 y 1/2 taza
+CEREALES Y DERIVADOS,churros,379,5,26.4,28.2,0,churros
+CEREALES Y DERIVADOS,lasaña ,139,6.3,10.3,7.9,0,lasaña carne y bechamel congelada
+CEREALES Y DERIVADOS,sobaos,456,5.3,47.6,26.4,0,sobados 39 gr por racion
+CEREALES Y DERIVADOS,pan de hamburguesa,279,9,48.2,4.9,0,pan de hamburguesa 55 gr
+CEREALES Y DERIVADOS,pan bimbo,86,2.7,16.2,1.7,0,pan bimbo 27gr
+CEREALES Y DERIVADOS,pan bimbo integral,267,9,47,3,0,pan bimbo integral 27gr renanada
+CEREALES Y DERIVADOS,pan blanco,232,7.6,47.8,1.2,0,pan blanco
+CEREALES Y DERIVADOS,pan integral de centeno,194,6.8,40.8,1.2,0,pan integral de centeno
+CEREALES Y DERIVADOS,pan tostado,299,10.1,59.2,2.5,0,pan tostado 10gr
+CEREALES Y DERIVADOS,pasta cocida,113,4,18.2,2.9,0,pasta cocida
+CEREALES Y DERIVADOS,macarrones,351,12.3,69.9,2.8,0,macarrones
+CEREALES Y DERIVADOS,nigiri,68,5,9,1,0,nigiri
+CEREALES Y DERIVADOS,espaguettis,351,12.3,69.9,2.8,0,espaguettis
+LEGUMBRES,garbanzos,292,19.8,48.6,3.4,0,garbanzos 35 gr 1/4 taza
+LEGUMBRES,guisantes verde,90,6.9,11.3,0.9,0,guisante verde
+LEGUMBRES,judias blancas,279,21.3,47.8,1.6,0,judias blancas
+LEGUMBRES,lentejas,301,23.5,52,1.4,0,lentejas 40 gr 1/4 taza
+LEGUMBRES,lata lentejas litoral,128,5.9,8.7,7.7,0,lata lentejas litoral 430gr
+LEGUMBRES,lentejas cocidas,83,7.4,13.4,0.4,0,lentejas cocidas
+TUBERCOLOS,patatas fritas en rodajas,507,5.5,40.6,39.4,0,patatas fritas en rodajas
+TUBERCOLOS,patatas fritas matutano,209,2.3,25.2,11,0,patatas fritas matutano
+TUBERCOLOS,pure de patata hecho,74,0.7,10.1,3.1,0,pure de patata 133 gr
+VERDURAS Y SETAS,ajetes,29,2.19,3.26,0.29,0,ajetes
+VERDURAS Y SETAS,judias verdes,36.42,2.37,4.2,0.58,0,judias verdes
+VERDURAS Y SETAS,esparragos blancos,18.79,1.875,1.5,0.3,0,esparragos blancos 20 gr
+VERDURAS Y SETAS,Esparragos de lata,12,1.9,1,0.3,0,Esparragos de lata
+VERDURAS Y SETAS,palmito ,43.2,2.8,8,0,0,palmito 35 gr
+VERDURAS Y SETAS,repollo,32,1.7,4.1,0.45,0,repollo 200gr
+HORTALIZAS DE FRUTO,Alcaparras,24,2.2,3.8,0,0,Alcaparras
+HORTALIZAS DE FRUTO,asadilla pimiento rojo,55,1.6,10,0.6,0,asadilla de pimientos rojos 180 gr
+HORTALIZAS DE FRUTO,Berenjena,15,1.2,2.7,0.2,0,Berenjena
+HORTALIZAS DE FRUTO,Calabacin,15,1.6,2.9,0.4,0,Calabacin
+HORTALIZAS DE FRUTO,Calabaza,23,1.1,4.8,0.1,0,Calabaza
+HORTALIZAS DE FRUTO,gazpacho,34.3,0.1,1.6,2.8,0,gazpacho
+HORTALIZAS DE FRUTO,Guisantes congelados,77,5.2,13.7,0.4,0,Guisantes congelados
+HORTALIZAS DE FRUTO,Maiz hervido,82,2.5,14,1.4,0,Maiz (140gr/lata)
+HORTALIZAS DE FRUTO,Habas,72,5.6,11.7,0.6,0,Habas
+HORTALIZAS DE FRUTO,Judias verdes,31,2.4,5.3,0.2,0,Judias verdes
+HORTALIZAS DE FRUTO,Pepinillos en vinagre,117,0.4,31.8,0.3,0,Pepinillos en vinagre
+HORTALIZAS DE FRUTO,Pepino,11,0.6,2.1,0.2,0,Pepino 125 gr
+HORTALIZAS DE FRUTO,Pimiento piquillo,35,1.6,5,0.6,0,Pimiento piquillo  20 gr
+HORTALIZAS DE FRUTO,Pimiento rojo,27,0.9,6.4,0.2,0,Pimiento rojo 180 gr
+HORTALIZAS DE FRUTO,salmorejo,38,0.9,5.9,1.1,0,salmorejo
+HORTALIZAS DE FRUTO,Pimiento verde,18,1.2,3.2,0.3,0,Pimiento verde 180 gr
+HORTALIZAS DE FRUTO,Tomate,18,1,3.5,0.2,0,Tomate 150 GR UNIDAD
+HORTALIZAS DE FRUTO,Zumo de tomate,17,0.8,3.4,0,0,Zumo de tomate
+HORTALIZAS BULBOSAS,soja,16,0.9,2.2,0.4,0,soja 10 gr cuch sopera
+HORTALIZAS BULBOSAS,zanahoria rayada,24,0.6,5.3,0.1,0,zanahoria tiras 12gr cuch sopera
+FRUTAS,Aguacate,205,1.9,0.4,23.5,0,Aguacate 200 gr
+FRUTAS,albaricoque seco,283,3.39,62.64,0.51,0,albaricoque seco 30 gr
+FRUTAS,Arandanos,33,0.7,6.5,0.6,0,Arandanos
+FRUTAS,Frambuesas,35,1.3,6.9,0.3,0,Frambuesas
+FRUTAS,granada,77,0.69,16.1,0.6,0,granada 320 gr
+FRUTAS,Higos,60,1.3,12.9,0.5,0,Higos
+FRUTAS,Higos secos,239,3.5,54,1.3,0,Higos secos
+FRUTAS,Melocoton en almibar,68,0.4,16.5,0.1,0,Melocoton en almibar
+FRUTAS,Melon,53,0.9,12.4,0.1,0,Melon
+FRUTAS,Membrillo,99,0.4,8.3,0.5,0,Membrillo
+FRUTAS,Moras,41,1.2,7.2,1,0,Moras
+FRUTAS,piña en su jugo,42.8,0.4,13,0.2,0,piña en su jugo 35 gr rodaja
+FRUTAS,Piña lata,84,0.4,20.2,0.2,0,Piña lata
+FRUTAS,paraguaya,50,0.9,10.2,0.1,0,paraguaya 135 gr
+FRUTAS,Pasas,278,2.5,66.2,0.6,0,Pasas
+ZUMOS DE FRUTAS,Promedio,52,0.4,11.9,0.3,0,Promedio (1vaso=200ml)
+ZUMOS DE FRUTAS,Limon,31,0.4,7.2,0.1,0,Limon
+ZUMOS DE FRUTAS,Manzana,47,0.1,11.8,0,0,Manzana
+ZUMOS DE FRUTAS,Naranja natural,46,0.7,10.7,0.2,0,Naranja natural (1 vaso=200m)
+ZUMOS DE FRUTAS,Naranja envasado,48,0.5,10.4,0.5,0,Naranja envasado
+ZUMOS DE FRUTAS,Piña,51,0.4,12.1,0.1,0,Piña
+ZUMOS DE FRUTAS,Uvas,69,0.2,17,0,0,Uvas
+CONFITURAS Y MERMELADAS,C.frambuesa,247,0.6,61.3,0,0,C.frambuesa
+CONFITURAS Y MERMELADAS,C.fresa,234,0.4,58.2,0,0,C.fresa
+CONFITURAS Y MERMELADAS,C.Naranja,243,0.4,60.4,0,0,C.Naranja
+CONFITURAS Y MERMELADAS,M.Albaricoque,205,0.5,50.5,0.1,0,M.Albaricoque
+CONFITURAS Y MERMELADAS,M.Melocoton,202,0.4,50,0.1,0,M.Melocoton
+FRUTOS SECOS,Almendras,554,18.4,9.1,54.1,0,Almendras (3-5 gr unidad)
+FRUTOS SECOS,Almendras garrapiñadas,499,9.4,54.4,27.1,0,Almendras garrapiñadas
+FRUTOS SECOS,Anacardo,536,17.5,30.5,42.2,0,Anacardo
+FRUTOS SECOS,Avellana,603,12,11.4,61.6,0,Avellana
+FRUTOS SECOS,Cacaguetes,556,25.6,13.4,49.4,0,Cacaguetes
+FRUTOS SECOS,Promedio frutos secos,593,15.9,16.9,51.4,0,Promedio frutos secos
+FRUTOS SECOS,Nueces,622,14.4,12.1,62.5,0,Nueces
+FRUTOS SECOS,Piñones,635,13,20.5,60.5,0,Piñones
+BEBIDAS SIN ALCOHOL,Tonica,34,0,8.8,0,0,Tonica
+BEBIDAS SIN ALCOHOL,Coca cola,41,0,10.4,0,0,Coca cola
+BEBIDAS SIN ALCOHOL,Café,2,0.1,0.4,0,0,Café
+BEBIDAS SIN ALCOHOL,Café instantaneo,100,14.6,11,0,0,Café instantaneo
+BEBIDAS SIN ALCOHOL,Te,1,0,0.3,0,0,Te
+VINOS,CERVEZA,11,0.3,0.8,0,0,CERVEZA
+VINOS,sidra,35,2.6,0,0,0,sidra
+VINOS,Vino blanco,151,0.2,11.7,0,0,Vino blanco
+VINOS,Vino tinto,67,0.2,0,0,0,Vino tinto
+LICORES,Coñac ,232,0,0,0,0,Coñac 
+LICORES,Ginebra,263,0,0,0,0,Ginebra
+LICORES,Licores promedio,243,0,0,0,0,Licores promedio
+LICORES,Ron,231,0,0,0,0,Ron
+LICORES,Vodca,231,0,0,0,0,Vodca
+LICORES,wisky,246,0,0,0,0,wisky
+SALSAS,Mostaza,103,5.5,5.4,5,0,Mostaza
+SALSAS,Tomate frito,83,1.2,11.2,3.7,0,Tomate frito 15GR CUCH. SOPERA
+SALSAS,Mohonesa,831,1.1,0.5,91.7,0,Mayonesa
+SALSAS,Mahonesa ligh,396,1,11.6,38.5,0,Mayonesa ligh 10 cuch peq 25 grande
+MISCELANEOS,Caldo de buey,30,2.1,4.1,0.6,0,Caldo de buey
+MISCELANEOS,Caldo de pollo,265,12.6,16.4,16.6,0,Caldo de pollo
+MISCELANEOS,Levadura royal,163,5.2,37.8,0,0,Levadura royal
+MISCELANEOS,sopa champiñon,53,0.9,3.8,3.7,0,sopa champiñon
+GALLETAS,Integrales,427,10,42.9,21.2,0,Integrales 8gr
+OTROS,miel,302,0.38,75,0,0,miel 20gr peq 40 gr grande
+OTROS,caldo carne gallina blanca,5,0.3,0.4,0.2,0,caldo carne gallina blanca

@@ -20,6 +20,7 @@ from django.shortcuts import redirect, render
 from django.urls import include, path
 from django.conf.urls.i18n import i18n_patterns
 
+
 from .views import *
 
 urlpatterns = i18n_patterns(
@@ -42,5 +43,6 @@ urlpatterns = i18n_patterns(
     path('toggle-user/<int:id>', toggleUser, name="toggle-user"),
     path('delete-user/<int:id>', deleteUser, name="delete-user"),
     path('update-user/<int:id>', updateUser, name="update-user"),
+    path('add-food', addFood, name="add-food"),
     path('api/v1/user/<int:id>', user) 
 )
