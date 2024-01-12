@@ -52,24 +52,28 @@ def profile_id(request: HttpRequest, id: int) -> HttpResponse:
   
   weight = tracking.weight if tracking else None
   
-  all_tracking = Tracking.objects.filter(user=client).order_by("date").all()
-  all_tracking = list(all_tracking)
-  test =  all_tracking[-1].date - all_tracking[0].date
-  
   labels = []
   data = []
-  tracking_index = 0
-  for i in range(test.days+1):
-    d = all_tracking[0].date + timedelta(days=0+i)
-    labels.append(d.isoformat())
-    if all_tracking[tracking_index].date == d:
-      data.append(all_tracking[tracking_index].weight)
-      tracking_index += 1
-    else:
-      data.append(nan)
+  
+  all_tracking = Tracking.objects.filter(user=client).order_by("date").all()
+  all_tracking = list(all_tracking)
+
+  if all_tracking.__len__() > 0:
+    test =  all_tracking[-1].date - all_tracking[0].date
+  
+  
+    tracking_index = 0
+    for i in range(test.days+1):
+      d = all_tracking[0].date + timedelta(days=0+i)
+      labels.append(d.isoformat())
+      if all_tracking[tracking_index].date == d:
+        data.append(all_tracking[tracking_index].weight)
+        tracking_index += 1
+      else:
+        data.append(nan)
       
     
-  print(labels, data)
+    print(labels, data)
   
   iter = all_tracking.__iter__()
   
