@@ -220,7 +220,7 @@ Implementar seguimiento del cliente (cliente y nutricionista)
 - Implementaa página del usuario con información sobre su evolución
 - Permitir al usuario registrar su evolución
 
-### Iteración 5 (Revisable) 
+### Iteración 5
 
 Crear CRUD de los alimentos
 
@@ -338,6 +338,7 @@ Tras la dedicación de innumerables horas a este proyecto, se han llegado a las 
 - Plantilla por Start Bootstrap - https://startbootstrap.com/template/modern-business/
 - Chart.js - https://chartjs.org
 - Generador de personas - https://thispersondoesnotexist.com/
+- Bootstap Table - https://bootstrap-table.com/
 
 # Anexo: Instalación
 
@@ -674,6 +675,7 @@ Copyright c Diego Sanz - 2023   GitHub . Privacy . Terms . Contact
 - Crear modelo UserData
 - Implementar página de crear y modificar clientes
 - Actualizar página del perfil/id para modificar, eliminar y desactivar clientes
+- Desplegar iteración 3
 
 8/1/24
 
@@ -687,6 +689,7 @@ Copyright c Diego Sanz - 2023   GitHub . Privacy . Terms . Contact
   - Conclusiones
   - Donde encontrar la app
 - Implementar seguimiento de peso (modelo tracking)
+- Desplegar iteración 4
 
 12/1/24
 
@@ -695,4 +698,6 @@ Copyright c Diego Sanz - 2023   GitHub . Privacy . Terms . Contact
 - Añadir librería js bootstrap-table
 - Añadir paginación a la api rest de los alimentos
 - Aádir pagina alimentos
+- Desplegar iteración 5 (django admin para crud)
+
 
