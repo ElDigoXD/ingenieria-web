@@ -61,11 +61,12 @@
               data-bs-toggle="dropdown">Debug</a>
               <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownDebug">
                 <li><a class="dropdown-item" hx-boost="false" href="/admin">Admin</a></li>
+                <li><a class="dropdown-item" hx-boost="false" href="/rosetta">Rosetta</a></li>
                 <li><a class="dropdown-item" href="{% url 'nutricionist' %}">Nutricionist</a></li>
                 <li><a class="dropdown-item" href="{% url 'profile' %}">Profile</a></li>
                 <li><a class="dropdown-item" href="{% url 'diet' %}">Diet</a></li>
                 <li><a class="dropdown-item" href="{% url 'create-user' %}">Create user</a></li>
-                <li><a class="dropdown-item" href="{% url 'food' %}">Food</a></li>
+                <li><a class="dropdown-item" href="{% url 'food' %}" hx-boost="false">Food</a></li>
               </ul>
 {% endif %}
             <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
