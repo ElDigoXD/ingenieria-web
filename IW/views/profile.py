@@ -40,7 +40,7 @@ def profile(request: HttpRequest) -> HttpResponse:
 def profile_id(request: HttpRequest, id: int) -> HttpResponse:
   user: User = request.user  # type: ignore
 
-  if not user.is_active or user.groups.get().name != 'Nutricionist' or DEBUG:
+  if not user.is_active or (user.groups.get().name != 'Nutricionist' and DEBUG):
     raise Http404("")
   
   client = User.objects.filter(id=id).first()
