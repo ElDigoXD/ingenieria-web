@@ -25,3 +25,12 @@ django command:
 
 pandoc: 
   wsl docker run --rm --volume ".:/data" --user "root" pandoc/extra ./README.md -o pdf.pdf -N --template="eisvogel" --listings
+
+deploy: 
+  source venv/bin/activate
+  git stash
+  git pull
+  python ./manage.py compilemessages
+  python ./manage.py collectstatic
+  chmod o+w db.sqlite3 .
+  sudo apachectl restart
