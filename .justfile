@@ -27,10 +27,22 @@ pandoc:
   wsl docker run --rm --volume ".:/data" --user "root" pandoc/extra ./README.md -o pdf.pdf -N --template="eisvogel" --listings
 
 deploy: 
-  git stash > /dev/null
-  git pull > /dev/null
-  ./venv/bin/python ./manage.py compilemessages > /dev/null
-  ./venv/bin/python ./manage.py collectstatic --noinput > /dev/null
-  chmod o+w db.sqlite3 . > /dev/null
-  sudo apachectl restart > /dev/null
+  @echo git stash
+  @git stash > /dev/null
+
+  @echo git pull
+  @git pull > /dev/null
+  
+  @echo ./venv/bin/python ./manage.py compilemessages
+  @./venv/bin/python ./manage.py compilemessages > /dev/null
+  
+  @echo ./venv/bin/python ./manage.py collectstatic --noinput
+  @./venv/bin/python ./manage.py collectstatic --noinput > /dev/null
+  
+  @echo chmod o+w db.sqlite3 .
+  @chmod o+w db.sqlite3 . > /dev/null
+  
+  @echo sudo apachectl restart
+  @sudo apachectl restart 2> /dev/null
+  
   @echo Done
