@@ -14,9 +14,9 @@
 <section class="py-5">
     <div class="container px-5">
 {% if update %}
-    <a href="{% url 'profile' crud_user.id %}">&lt; Volver</a>
+    <a class="link-secondary" href="{% url 'profile' crud_user.id %}">&lt; Volver</a>
 {% else %}
-    <a href="{% url 'nutricionist' %}">&lt; Volver</a>
+    <a class="link-secondary" href="{% url 'nutricionist' %}">&lt; Volver</a>
 {% endif %}
 
         <!-- Contact form -->

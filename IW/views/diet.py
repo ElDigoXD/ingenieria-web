@@ -5,7 +5,7 @@ from django.shortcuts import render
 
 def diet(request: HttpRequest) -> HttpResponse:
   date_min = date(2024, 1, 1)
-  date_max = date(2024, 1, 10)
+  date_max = date(2024, 1, 30)
   date_selected = date.today()
   
   

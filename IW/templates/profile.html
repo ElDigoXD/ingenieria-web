@@ -14,10 +14,16 @@
 {% block main %}
 
 
-<div class="m-5">
+
+
+<!-- Page content -->
+<section class="py-5">
+
+<div class="container px-5">
 {% if nutricionist %}
-  <a href="{% url 'nutricionist' %}">&lt; Volver</a>
+<a class="link-secondary" href="{% url 'nutricionist' %}">&lt; Volver</a>
 {% endif %}
+<div id="form_container" class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
 
   <h1>{{ client.first_name }} {{ client.last_name}}</h1>
 {% if nutricionist %}
@@ -44,7 +50,7 @@
     Eliminar usuario
   </button>
 {% endif %}
-  <div class="d-flex">
+  <div class="d-flex mt-3">
     <div class="col-auto">
     <h4>Dieta hoy:</h4>
     <ul>
@@ -99,10 +105,10 @@
       </ul>
       </div>
   </div>
-  <a class="btn btn-primary" href="{% url 'diet' %}">Consultar detalles de la dieta</a>
+  <a class="btn btn-primary mt-3" href="{% url 'diet' %}">Consultar detalles de la dieta</a>
 
-  <h2>Evolución</h2>
-  <form method="post" class="row" hx-post="{% url 'update-dayly-weight' client.id %}">
+  <h2 class="mt-3">Evolución</h2>
+  <form method="post" class="row mb-5" hx-post="{% url 'update-daily-weight' client.id %}">
 {% if not weight %}
     <div class="col-4" style="max-width: 10rem;">
       <input class="form-control" type="number" name="kg" placeholder="KG" />
@@ -123,4 +129,7 @@
   <!--chart-->
   {% include "components/chart.html" %}
 </div>
+</div>
+</div>
+</section>
 {% endblock main %}

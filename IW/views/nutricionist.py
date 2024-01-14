@@ -1,10 +1,9 @@
-import pprint
 from django.http import Http404, HttpRequest, HttpResponse, JsonResponse
 from django.contrib.auth.models import User, Group
 from django.shortcuts import render, resolve_url
 from django_htmx.http import HttpResponseClientRedirect, push_url
 from django.views.decorators.http import require_POST, require_http_methods, require_GET
-
+from ..settings import DEBUG
 from IW.models import UserData
 
 
@@ -48,19 +47,22 @@ def createUser(request: HttpRequest) -> HttpResponse:
 
     return HttpResponseClientRedirect(resolve_url(to="nutricionist"))
 
-  context = {
-      "crud_user": {
-          "first_name": "first_name",
-          "last_name": "last_name",
-          "username": "email@email.com",
-          "userdata": {
-              "weight": "10",
-              "height": "100",
-              "activity": "1.55",
-              "phone": "111 111 111",
-          }
-      },
-  }
+  if DEBUG:
+    context = {
+        "crud_user": {
+            "first_name": "first_name",
+            "last_name": "last_name",
+            "username": "email@email.com",
+            "userdata": {
+                "weight": "10",
+                "height": "100",
+                "activity": "1.55",
+                "phone": "111 111 111",
+            }
+        },
+    }
+  else:
+    context = {}
 
   return render(request, "user-crud.html", context)
 
