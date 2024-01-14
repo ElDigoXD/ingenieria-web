@@ -23,22 +23,22 @@
                     <form id="contactForm" class="needs-validation" novalidate>
                         <!-- Name input hx-on::before-request="if(!document.getElementById('contactForm').checkValidity()) {alert(); evt.preventDefault(); evt.stopPropagation();}" -->
                         <div class="form-floating mb-3">
-                            <input class="form-control" id="name" type="text" placeholder="{% trans 'Nombre completo' %}" required />
+                            <input class="form-control" id="name" name="name" type="text" autocomplete="name" placeholder="{% trans 'Nombre completo' %}" required />
                             <label for="name">{% trans 'Nombre completo' %}</label>
                         </div>
                         <!-- Email address input -->
                         <div class="form-floating mb-3">
-                            <input class="form-control" id="email" type="email" placeholder="{% trans 'Dirección de correo' %}" required/>
+                            <input class="form-control" id="email" name="email" type="email" autocomplete="email" placeholder="{% trans 'Dirección de correo' %}" required/>
                             <label for="email">{% trans 'Dirección de correo' %}</label>
                         </div>
                         <!-- Phone number input -->
                         <div class="form-floating mb-3">
-                            <input class="form-control" id="phone" type="tel" placeholder="123 45 67 89" required/>
+                            <input class="form-control" id="phone" name="phone" type="tel" autocomplete="tel" placeholder="123 45 67 89" required/>
                             <label for="phone">{% trans 'Numero de teléfono' %}</label>
                         </div>
                         <!-- Message input -->
                         <div class="form-floating mb-3">
-                            <textarea class="form-control" id="message" type="text" placeholder="{% trans 'Mensaje' %}" style="height: 10rem" required></textarea>
+                            <textarea class="form-control" id="message" id="message" type="text" placeholder="{% trans 'Mensaje' %}" style="height: 10rem" required></textarea>
                             <label for="message">{% trans 'Mensaje' %}</label>
                         </div>
                         <!-- Submit Button -->

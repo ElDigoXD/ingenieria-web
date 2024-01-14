@@ -54,12 +54,12 @@
                         novalidate>
                         <!-- Email address input -->
                         <div class="form-floating mb-3">
-                            <input class="form-control" id="username" name="username" type="email" placeholder="{% trans 'Dirección de correo' %}" value="a@a.aa" required/>
+                            <input class="form-control" id="username" name="username" type="email" autocomplete="email" placeholder="{% trans 'Dirección de correo' %}" value="a@a.aa" required/>
                             <label for="username">{% trans 'Dirección de correo' %}</label>
                         </div>
                         <!-- Password input -->
                         <div class="form-floating mb-3">
-                            <input class="form-control" id="password" name="password" type="password" placeholder="password" value="ds" required/>
+                            <input class="form-control" id="password" name="password" type="password" autocomplete="current-password" placeholder="password" value="ds" required/>
                             <label for="password">{% trans 'Contraseña' %}</label>
                         </div>
                         <!-- Error container -->
