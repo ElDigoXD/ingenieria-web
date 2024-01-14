@@ -700,4 +700,14 @@ Copyright c Diego Sanz - 2023   GitHub . Privacy . Terms . Contact
 - Aádir pagina alimentos
 - Desplegar iteración 5 (django admin para crud)
 
+14/1/24
 
+- Modificar estilos
+- Autocompletado (atributo autocomplete)
+- Traducción de la Iteracion 1
+
+todo:
+- Redactar importación/paginación
+- Implementar CRUD de dietas para el nutricionista (nutricionista)
+- Implementar copia de dietas (nutricionista)
+- Implementar consulta de dietas (cliente y nutricionista)

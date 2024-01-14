@@ -30,6 +30,6 @@ deploy:
   git stash
   git pull
   ./venv/bin/python ./manage.py compilemessages
-  ./venv/bin/python ./manage.py collectstatic
+  ./venv/bin/python ./manage.py collectstatic --noinput
   chmod o+w db.sqlite3 .
   sudo apachectl restart
