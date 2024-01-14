@@ -2,10 +2,9 @@
 
 
 from datetime import date, timedelta
-from json import dumps
 from math import nan
 from django.http import Http404, HttpRequest, HttpResponse, HttpResponseRedirect
-from django.shortcuts import render, resolve_url, get_list_or_404
+from django.shortcuts import render, resolve_url
 from django.urls import reverse
 from django_htmx.http import HttpResponseClientRedirect
 from django.contrib.auth.models import User, Group
@@ -41,7 +40,7 @@ def profile(request: HttpRequest) -> HttpResponse:
 def profile_id(request: HttpRequest, id: int) -> HttpResponse:
   user: User = request.user  # type: ignore
 
-  if not user.is_active or user.groups.get().name != 'Nutricionist' or not DEBUG:
+  if not user.is_active or user.groups.get().name != 'Nutricionist' or DEBUG:
     raise Http404("")
   
   client = User.objects.filter(id=id).first()
@@ -92,7 +91,7 @@ def profile_id(request: HttpRequest, id: int) -> HttpResponse:
   return render(request, "profile.html", context)
 
 @require_POST
-def updateDaylyWeight(request: HttpRequest, id: int) -> HttpResponse:
+def updateDailyWeight(request: HttpRequest, id: int) -> HttpResponse:
   user: User = request.user  # type: ignore
   if not user.is_active or not request.POST.get("kg"):
     raise Http404("")
