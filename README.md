@@ -3,7 +3,7 @@ version: "1"
 title: Ingeniería Web
 subtitle: Proyecto nutricionista
 author: Diego Sanz Fuertes | 825015
-date: 8 de enero de 2024
+date: 15 de enero de 2024
 toc: true
 toc-own-page: true
 lang: es-ES
@@ -23,29 +23,8 @@ output:
     from: markdown
     listings: true
     citeproc: true
-    
-#cp /mnt/c/Users/Diego/ingenieria-web/README.md /mnt/c/Users/Diego/ingenieria-web/*.png . && docker run --rm --volume "`pwd`:/data" --user "root" pandoc/extra README.md -o pdf.pdf -N --template="eisvogel" --listings && cp pdf.pdf /mnt/c/Users/Diego/ingenieria-web/
-...
 
-# Índice
-- [Introducción, Motivación y Objetivos](#introducción-motivación-y-objetivos) 
-- [Estado del arte](#estado-del-arte)
-- [Presentación de la propuesta](#presentación-de-la-propuesta)
-- [Arquitectura propuesta](#arquitectura-propuesta)
-  - [Servidor](#servidor)
-  - [Cliente](#cliente)
-- [Arquitectura de contenidos](#arquitectura-de-contenidos)
-- [Ingeniería de requisitos](#ingeniería-de-requisitos)
-  - [Público objetivo](#público-objetivo)
-  - [Historias de usuario](#historias-de-usuario)
-  - [Iteraciones](#iteraciones)
-- [Detalles de la implementación](#detalles-de-la-implementación)
-- [Referencias](#referencias)
-- [Anexo: Instalación](#anexo-instalación)
-  - [Desarrollo](#versión-de-desarrollo)
-  - [Producción](#versión-de-producción)
-- [Anexo: Mockups](#anexo-mockups)
-- [Anexo: Historial](#anexo-historial)
+...
 
 # Introducción, Motivación y Objetivos 
 
@@ -114,7 +93,7 @@ El cliente (o frontend) se desarrollará mediante las plantillas ofrecidas por D
 - Consultar evolución
 - Añadir seguimiento
 
-### Nutricionista / admin
+### Nutricionista / Administrador
 
 - Iniciar sesión
 - Gestionar clientes 
@@ -216,7 +195,7 @@ Implementar CRUD de los usuarios (nutricionista)
 
 Implementar seguimiento del cliente (cliente y nutricionista) 
 
-- Historias 5
+- Historias: 5
 - Implementaa página del usuario con información sobre su evolución
 - Permitir al usuario registrar su evolución
 
@@ -224,12 +203,12 @@ Implementar seguimiento del cliente (cliente y nutricionista)
 
 Crear CRUD de los alimentos
 
-- Historias 8
+- Historias: 8
 - Cargar los alimentos en la BBDD
 - Implementar página de gestión de alimentos con posibilidad de CRUD
 - Posibilidad de crear _raciones_
 
-### Iteración 6 (Revisable) 
+### Iteración 6 (No alcanzada) 
 
 Implementar la CRUD de las dietas
 
@@ -238,34 +217,12 @@ Implementar la CRUD de las dietas
 - Implementar copia de dietas (nutricionista)
 - Implementar consulta de dietas (cliente y nutricionista)
 
-### Iteración 7 (Revisable) 
+### Iteración 7 (No alcanzada) 
 
 Generar 5 comidas basadas en la dieta.
 
 - Historias: 7
 - Generar alimentos
-
-
-Requisitos en sucio:
-
-- bbdd
-- web de gestion
-- web de usuario
-- api rest
-- multi-idioma
-- gráficas de evolución
-- búsquedas autocompletadas
-- calculo imc
-- calculo % grasa corporal
-- generar serie de alimentos para 5 comidas basado en ratios y restricciones
-- catalogar alimentos
-- dias excepcionales (opcional)
-- modificación temporal (opcional)
-- crear nuevas dietas y modificar las activas
-- histórico de dietas y evoluciones
-- copiar dietas
-- calcular calorías necesarias
-- variar formulas calorías
 
 
 # Detalles de la implementación
@@ -275,6 +232,10 @@ En esta sección se detallará como se han implementado diferentes funcionalidad
 ## Plantilla
 
 La interfaz web se basa en una plantilla licenciada bajo MIT creada por [Start Bootstrap](https://startbootstrap.com/template/modern-business) la cuál contiene varias páginas de ejemplo que han sido modificadas para adaptarse a las necesidades de este proyecto.
+
+## SQLite
+
+SQLite es una base de datos ligera, la cual se almacena en un fichero. Se ha escogido por su comodidad de desplilegue y desarrollo, permitiendo incluirla en el repositorio. Django ofrece un ORM el cuál abstrae la base de datos, haciendo su posterior sustitución por MariaDB o PostgreSQL, cuando se requiera de la potencia que estos sistemas gestores de bases de datos ofrecen, muy sencilla.
 
 ## Internacionalización y localización 
 
@@ -314,9 +275,11 @@ Los gráficos se han generado a través de la librería [Chart.js](https://chart
 
 ## API REST
 
-Para crear una API REST se ha creado la ruta estandar "/api/v1/" en la que se puede acceder al objeto "user" mediante get y, si existe, se reciben sus datos en formato JSON. Estas peticiones podrían contar con más seguridad mediante el uso de autenticación del cliente mediante tokens o contraseñas.
+Para crear una API REST se ha creado la ruta estandar "/api/v1/" en la que se pueden acceder a los objetos "user" y "food" mediante GET y, si existen, se reciben sus datos en formato JSON. Estas peticiones podrían contar con más seguridad mediante el uso de autenticación del cliente mediante tokens o contraseñas. El acceso a los objetos "food" permite filtrado, paginación y ordenación mediante parametros GET. Los objetos "food" se pueden modificar mediante POST.
 
-También existe una extensión para django centrada en realizar APIs REST llamada django-rest-framework pero no se ha considerado necesario su uso en esta aplicación web.
+La api se ha utilizado para la página que muestra una tabla con los alimentos.
+
+Existe una extensión para django centrada en realizar APIs REST llamada django-rest-framework pero no se ha considerado necesario su uso en esta aplicación web.
 
 
 # Conclusiones
@@ -697,7 +660,7 @@ Copyright c Diego Sanz - 2023   GitHub . Privacy . Terms . Contact
 - Importar los alimentos en la BBDD (modelo food)
 - Añadir librería js bootstrap-table
 - Añadir paginación a la api rest de los alimentos
-- Aádir pagina alimentos
+- Añdir pagina alimentos
 - Desplegar iteración 5 (django admin para crud)
 
 14/1/24
@@ -706,8 +669,13 @@ Copyright c Diego Sanz - 2023   GitHub . Privacy . Terms . Contact
 - Autocompletado (atributo autocomplete)
 - Traducción de la Iteracion 1
 
-todo:
-- Redactar importación/paginación
-- Implementar CRUD de dietas para el nutricionista (nutricionista)
-- Implementar copia de dietas (nutricionista)
-- Implementar consulta de dietas (cliente y nutricionista)
+15/1/24
+
+- Arreglar formulario de contacto
+- POST de api food
+- Apache ssl autofirma
+- Cálculo IMC y % grasa
+- Redactar:
+  - Paginación
+  - SQLite
+- Preparar la entrega
