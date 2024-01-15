@@ -26,6 +26,8 @@
 <div id="form_container" class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
 
   <h1>{{ client.first_name }} {{ client.last_name}}</h1>
+  <p>IMC: {{ IMC }}, Grasa corporal: {{ fat_percent|floatformat }}%</p>
+
 {% if nutricionist %}
   <button 
     class="btn btn-outline-primary" 

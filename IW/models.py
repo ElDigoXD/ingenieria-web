@@ -10,6 +10,8 @@ class UserData(models.Model):
   height = models.IntegerField()
   activity = models.FloatField()
   phone = models.CharField(max_length=20)
+  gender = models.IntegerField()
+  year_of_birth = models.IntegerField()
 
 
 class Tracking(models.Model):

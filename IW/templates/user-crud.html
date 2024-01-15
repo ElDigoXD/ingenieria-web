@@ -69,7 +69,19 @@
                           <option value="1.9">Extrema</option>
                         </select>
                         <label for="activity">Nivel de actividad</label>
-                        <script>(()=>{document.getElementById("activity").value = "{{ crud_user.userdata.activity }}"})()</script>
+                        {% if update %}<script>(()=>{document.getElementById("activity").value = "{{ crud_user.userdata.activity }}"})()</script>{% endif %}
+                      </div>
+                      <div class="form-floating mb-3">
+                        <select class="form-control" id="gender" name="gender" type="number" placeholder="Sexo" required>
+                          <option value="0">Mujer</option>
+                          <option value="1">Hombre</option>
+                        </select>
+                        <label for="activity">Sexo</label>
+                        {% if update %}<script>(()=>{document.getElementById("gender").value = "{{ crud_user.userdata.gender }}"})()</script>{% endif %}
+                      </div>
+                      <div class="form-floating mb-3">
+                        <input class="form-control" id="year_of_birth" name="year_of_birth" type="number" placeholder="Año de nacimiento" value="{{ crud_user.userdata.year_of_birth }}" required/>
+                        <label for="weight">Año de nacimiento</label>
                       </div>
                       <!-- Phone number input -->
                       <div class="form-floating mb-3">
