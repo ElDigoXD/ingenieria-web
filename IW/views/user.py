@@ -33,6 +33,8 @@ def createUser(request: HttpRequest) -> HttpResponse:
         height=form["height"],
         activity=form["activity"],
         phone=form["phone"],
+        gender=form["gender"],
+        year_of_birth=form["year_of_birth"],
     )
 
     return HttpResponseClientRedirect(resolve_url(to="nutricionist"))
@@ -48,6 +50,8 @@ def createUser(request: HttpRequest) -> HttpResponse:
                 "height": "100",
                 "activity": "1.55",
                 "phone": "111 111 111",
+                "gender": "0",
+                "year_of_birth": "2000",
             }
         },
     }
@@ -96,6 +100,8 @@ def updateUser(request: HttpRequest, id: int) -> HttpResponse:
     user.userdata.height = form["height"]  # type: ignore
     user.userdata.activity = form["activity"]  # type: ignore
     user.userdata.phone = form["phone"]  # type: ignore
+    user.userdata.gender = form["gender"]  # type: ignore
+    user.userdata.year_of_birth = form["year_of_birth"]  # type: ignore
     user.userdata.save()  # type: ignore
     user.save()
 
@@ -106,7 +112,7 @@ def updateUser(request: HttpRequest, id: int) -> HttpResponse:
 def user(request: HttpRequest) -> HttpResponse:
   if request.method == "GET":
 
-    users = [user for user in User.objects.filter() if user.groups.first() and user.groups.first().name == 'Client'] # type: ignore
+    users = [user for user in User.objects.filter() if user.groups.first() and user.groups.first().name == 'Client']  # type: ignore
 
     data = [{
         "first_name": user.first_name,
@@ -116,6 +122,8 @@ def user(request: HttpRequest) -> HttpResponse:
         "height": user.userdata.height,  # type: ignore
         "activity": user.userdata.activity,  # type: ignore
         "phone": user.userdata.phone,  # type: ignore
+        "gender": user.userdata.gender,  # type: ignore
+        "year_of_birth": user.userdata.year_of_birth  # type: ignore
     } for user in users]
 
     return JsonResponse(data, safe=False)
@@ -137,6 +145,8 @@ def user_id(request: HttpRequest, id: int) -> HttpResponse:
         "height": user.userdata.height,  # type: ignore
         "activity": user.userdata.activity,  # type: ignore
         "phone": user.userdata.phone,  # type: ignore
+        "gender": user.userdata.gender,  # type: ignore
+        "year_of_birth": user.userdata.year_of_birth,  # type: ignore
     }
 
     return JsonResponse(data)
