@@ -70,12 +70,6 @@ def profile_id(request: HttpRequest, id: int) -> HttpResponse:
         tracking_index += 1
       else:
         data.append(nan)
-      
-    
-    print(labels, data)
-  
-  iter = all_tracking.__iter__()
-  
   
   context = {
     "nutricionist": True,

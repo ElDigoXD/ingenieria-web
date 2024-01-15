@@ -17,7 +17,7 @@
                     <i class="bi bi-key"></i>
                 </div>
                 <h1 class="fw-bolder">{% trans 'Iniciar sesión' %}</h1>
-                <p class="lead fw-normal text-muted mb-0">Debug: cliente a@a.aa, nutricionista b@b.bb, pwd ds</p>
+                {% if debug %}<p class="lead fw-normal text-muted mb-0">Debug: cliente a@a.aa, nutricionista b@b.bb, pwd ds</p>{% endif %}
                 
 {% if user.is_authenticated %}
                 <p class="lead fw-normal text-muted mb-0">{% trans 'Ya se ha iniciado sesión' %}</p>
@@ -54,12 +54,12 @@
                         novalidate>
                         <!-- Email address input -->
                         <div class="form-floating mb-3">
-                            <input class="form-control" id="username" name="username" type="email" autocomplete="email" placeholder="{% trans 'Dirección de correo' %}" value="a@a.aa" required/>
+                            <input class="form-control" id="username" name="username" type="email" autocomplete="email" placeholder="{% trans 'Dirección de correo' %}" {% if debug %} value="b@b.bb" {% endif %} required/>
                             <label for="username">{% trans 'Dirección de correo' %}</label>
                         </div>
                         <!-- Password input -->
                         <div class="form-floating mb-3">
-                            <input class="form-control" id="password" name="password" type="password" autocomplete="current-password" placeholder="password" value="ds" required/>
+                            <input class="form-control" id="password" name="password" type="password" autocomplete="current-password" placeholder="password" {% if debug %} value="ds" {% endif %} required/>
                             <label for="password">{% trans 'Contraseña' %}</label>
                         </div>
                         <!-- Error container -->

@@ -106,7 +106,6 @@ def updateUser(request: HttpRequest, id: int) -> HttpResponse:
     user.userdata.height = form["height"]  # type: ignore
     user.userdata.activity = form["activity"]  # type: ignore
     user.userdata.phone = form["phone"]  # type: ignore
-    print(form)
     user.userdata.save()  # type: ignore
     user.save()
 

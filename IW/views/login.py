@@ -14,7 +14,6 @@ def login(request: HttpRequest) -> HttpResponse:
 def login_form(request: HttpRequest) -> HttpResponse:
   
   user: User | None = authenticate(username=request.POST.get("username"), password=request.POST.get("password")) # type: ignore
-  print(request.POST)
   
   if not user:
     return render(request, "login-form-response.html")
