@@ -10,7 +10,7 @@
 <section class="py-5">
     <div class="container px-5">
         <!-- Contact form -->
-        <div id="form_container" class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
+        <div id="formContainer" class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
             <div class="text-center mb-5">
                 <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3">
                     <i class="bi bi-envelope"></i>
@@ -20,33 +20,41 @@
             </div>
             <div class="row gx-5 justify-content-center">
                 <div class="col-lg-8 col-xl-6">
-                    <form id="contactForm" class="needs-validation" novalidate>
-                        <!-- Name input hx-on::before-request="if(!document.getElementById('contactForm').checkValidity()) {alert(); evt.preventDefault(); evt.stopPropagation();}" -->
+                    <form 
+                        id="mainForm" 
+                        class="needs-validation"
+                        hx-post="{% url 'contact-form' %}" 
+                        hx-trigger="bs-send"
+                        hx-swap="outerHTML"
+                        hx-target="#formContainer" 
+                        novalidate>
                         <div class="form-floating mb-3">
-                            <input class="form-control" id="name" name="name" type="text" autocomplete="name" placeholder="{% trans 'Nombre completo' %}" required />
+                            <input class="form-control" id="name" name="name" type="text" autocomplete="name" placeholder="{% trans 'Nombre completo' %}" maxlength="50" required />
                             <label for="name">{% trans 'Nombre completo' %}</label>
                         </div>
                         <!-- Email address input -->
                         <div class="form-floating mb-3">
-                            <input class="form-control" id="email" name="email" type="email" autocomplete="email" placeholder="{% trans 'Dirección de correo' %}" required/>
+                            <input class="form-control" id="email" name="email" type="email" autocomplete="email" placeholder="{% trans 'Dirección de correo' %}" maxlength="50" required/>
                             <label for="email">{% trans 'Dirección de correo' %}</label>
                         </div>
                         <!-- Phone number input -->
                         <div class="form-floating mb-3">
-                            <input class="form-control" id="phone" name="phone" type="tel" autocomplete="tel" placeholder="123 45 67 89" required/>
+                            <input class="form-control" id="phone" name="phone" type="tel" autocomplete="tel" placeholder="123 45 67 89" maxlength="50" required/>
                             <label for="phone">{% trans 'Numero de teléfono' %}</label>
                         </div>
                         <!-- Message input -->
                         <div class="form-floating mb-3">
-                            <textarea class="form-control" id="message" id="message" type="text" placeholder="{% trans 'Mensaje' %}" style="height: 10rem" required></textarea>
+                            <textarea class="form-control" id="message" name="message" type="text" placeholder="{% trans 'Mensaje' %}" style="height: 10rem" maxlength="500" required></textarea>
                             <label for="message">{% trans 'Mensaje' %}</label>
                         </div>
                         <!-- Submit Button -->
                         <div class="d-grid">
-                            <button class="btn btn-primary btn-lg" id="submitButton"
-                                    hx-trigger="click[checkValidity()]"
-                                    hx-post="{% url 'contact-form' %}" hx-boost="false" hx-swap="outterHTML"
-                                    hx-target="#form_container">{% trans 'Enviar' %}</button>
+                            <button 
+                                class="btn btn-primary btn-lg" 
+                                id="submitButton"
+                                type="submit">
+                                {% trans 'Enviar' %}
+                            </button>
                         </div>
                     </form>
                 </div>
@@ -73,32 +81,21 @@
 </section>
 
 <script>
-    // Disabling form submissions if there are invalid fields
-    function checkValidity() {
-        document.getElementById('contactForm').classList.add('was-validated')
-        return document.getElementById('contactForm').checkValidity()
-    }
     ; (() => {
         'use strict'
+        const form = document.getElementById('mainForm')
+        if (!form) return
 
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        const forms = document.querySelectorAll('.needs-validation')
-
-        // Loop over them and prevent submission
-        Array.from(forms).forEach((form) => {
-            form.addEventListener(
-                'submit',
-                (event) => {
-                    if (!form.checkValidity()) {
-                        event.preventDefault()
-                        event.stopPropagation()
-                    }
-
-                    form.classList.add('was-validated')
-                },
-                false
-            )
-        })
+        form.addEventListener('submit', (event) => {
+                if (form.checkValidity()) {
+                    // trigger custom event hx-trigger="bs-send"
+                    htmx.trigger(form, "bsSend");
+                }
+                event.preventDefault()
+                event.stopPropagation()
+                
+                form.classList.add('was-validated')
+            },false)
     })()
 </script>
 {% endblock %}
