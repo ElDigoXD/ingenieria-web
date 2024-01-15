@@ -6,3 +6,4 @@ from .profile import *
 from .diet import diet
 from .nutricionist import *
 from .food import *
+from .user import *
